@@ -8,7 +8,7 @@ class pc_view{
         $this->smarty= new Smarty();
     }
 
-    function ViewAllpc($pc){
+    function viewAllPc($pc){
         $this->smarty->assign('arreglo', $pc);
         $this->smarty->display('templates/pc_viewAll.tpl');
     }
