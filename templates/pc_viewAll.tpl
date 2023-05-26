@@ -8,7 +8,21 @@
 </head>
 <body>
     {include file= "header.tpl"}
-    <h1>Esto es {$a} </h1>
+    <div>
+        {foreach from=$arreglo item=$elemento}
+        <div>
+            <a href="////">
+                <ul>
+                    <li>Motherboard: {$elemento->motherboard}</li>
+                    <li>processor: {$elemento->processor}</li>
+                    <li>Video Card: {$elemento->video}</li>
+                    <li>RAM: {$elemento->RAM}</li>
+                    <li>Gama: {$elemento->name}</li>
+                </ul>
+            </a>
+        </div>
+        {/foreach}
+    </div>
     {include file= "footer.tpl"}
 </body>
 </html>
