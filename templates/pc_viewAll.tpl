@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-
+    {include file= "header.tpl"}
+    <h1>Esto es {$a} </h1>
+    {include file= "footer.tpl"}
 </body>
 </html>

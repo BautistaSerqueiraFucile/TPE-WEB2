@@ -12,8 +12,4 @@ class gama_view {
         $this->smarty->assign("a","juansito");
         $this->smarty->display('templates/gama_viewAll.tpl');
     }
-
-    function prueba(){
-        echo "hola";
-    }
 }
