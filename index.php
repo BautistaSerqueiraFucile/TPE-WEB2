@@ -1,9 +1,8 @@
 <?php
 
-require_once "view/gama_view.php";
+//require_once "view/gama_view.php";
+require_once "model/gama_model.php";
 
-$test= new gama_view();
+$gama = new gama_model();
 
-$test->gamaAllView();
-
-$test->prueba();
+$gama->getAllGama();
