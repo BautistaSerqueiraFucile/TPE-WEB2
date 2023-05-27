@@ -1,14 +1,9 @@
 <?php
 
 //require_once "view/gama_view.php";
-require_once "model/gama_model.php";
-require_once "model/pc_model.php";
-require_once "view/pc_view.php";
+require_once "controller/pc_controller.php";
 
+$pc_control= new pc_controller();
 
+$pc_control->showAllPc();
 
-$pc = new pc_model();
-
-$pcView = new pc_view();
-
-$pcView->viewAllPc($pc->getAllPc());

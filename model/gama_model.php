@@ -10,7 +10,7 @@ class gama_model{
     function getAllGama(){
         $sentencia = $this->db->prepare("SELECT * FROM gama");
         $sentencia->execute();
-        var_dump($sentencia->fetchAll(PDO::FETCH_OBJ));
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
 }

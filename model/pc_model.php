@@ -11,8 +11,9 @@ class pc_model{
     }
 
     function getAllPc(){
-        $sentencia = $this->db->prepare('SELECT * FROM pc join gama on pc.id_pc=gama.id_gama');
+        $sentencia = $this->db->prepare('SELECT * FROM pc join gama on pc.id_gama = gama.id_gama');
         $sentencia->execute();
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
+        
     }
 }
