@@ -8,7 +8,8 @@ class gama_view {
         $this->smarty = new Smarty();
     }
 
-    function viewAllGama($gama,$URL) {
+// funcion para hacer la vista de las gamas    
+function viewAllGama($gama,$URL) {
 
         $this->smarty->assign('url', $URL);                
         $this->smarty->assign('gama_arreglo', $gama);      
