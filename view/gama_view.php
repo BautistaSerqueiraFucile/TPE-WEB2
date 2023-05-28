@@ -8,6 +8,7 @@ class gama_view {
         $this->smarty = new Smarty();
     }
 
+    // funcion para hacer la vista de las gamas
     function gamaAllView( ) {
         $this->smarty->assign("a","juansito");
         $this->smarty->display('templates/gama_viewAll.tpl');
