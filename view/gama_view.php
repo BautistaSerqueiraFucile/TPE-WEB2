@@ -8,8 +8,11 @@ class gama_view {
         $this->smarty = new Smarty();
     }
 
-    function gamaAllView( ) {
-        $this->smarty->assign("a","juansito");
+    function viewAllGama($gama,$URL) {
+
+        $this->smarty->assign('url', $URL);                
+        $this->smarty->assign('gama_arreglo', $gama);      
+        
         $this->smarty->display('templates/gama_viewAll.tpl');
     }
 }

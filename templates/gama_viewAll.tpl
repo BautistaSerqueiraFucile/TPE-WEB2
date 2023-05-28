@@ -6,11 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <base href={$url}>
-    <title>{$title}</title>
+    <title>Visualizando Gamas</title>
 </head>
 <body>
     {include file= "header.tpl"}
-    <h1>Esto es {$a} </h1>
+    <main class="main">
+    {include file= "aside.tpl"}
+    <section class="gama">            
+        {foreach from=$gama_arreglo item=$elemento}        
+        <article>
+            <a href="gama/{$elemento->id_gama}">
+                <ul>
+                <li>ID GAMA: {$elemento->id_gama}</li>
+                <li>{$elemento->name}:</li>                
+                <li>Gama: {$elemento->description_gama}</li>
+                </ul>
+            </a>
+        </article>
+        {/foreach}    
+    </section>
+    </main>
     {include file= "footer.tpl"}
 </body>
 </html>

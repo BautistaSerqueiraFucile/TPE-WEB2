@@ -1,9 +1,14 @@
+*{
+    margin: 0;
+}
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: blue;
     height: 75px;
+    position: sticky;
+    top: 0;
 }
 
 nav{
@@ -15,6 +20,7 @@ nav{
 
 main{
     display: flex;
+    min-height: 100vh;
 }
 
 aside{
@@ -23,6 +29,7 @@ aside{
     border: solid 2px blue;    
     border-radius: 20px;
     width: 25%;
+    height: fit-content;
 }
 section{
     display: flex;
@@ -30,6 +37,10 @@ section{
     flex-wrap: wrap;
 }
 
+.gama{    
+    flex-direction: column;  
+    
+}
 article{
     margin: 10px;
     padding: 10px;
@@ -57,4 +68,5 @@ footer{
     justify-content: center;
     background-color: blue;
     height: 75px;
+    bottom: 0;
 }
