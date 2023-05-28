@@ -26,4 +26,9 @@ public function __construct(){
         $pc = $this->pc_model->GetPcById($id);
         $this->pc_view->ViewDetailPc($id, $pc, $this->gama_model->getAllGama(), $URL);
     }
+    
+    public function showGamaPc($gama,$URL){
+        $pc = $this->pc_model->GetPcByGama($gama);
+        $this->pc_view->viewPcByGama($pc, $this->gama_model->getAllGama(), $URL);
+    }
 }

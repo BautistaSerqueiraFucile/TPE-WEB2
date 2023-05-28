@@ -23,4 +23,11 @@ class pc_view{
         $this->smarty->assign('gama_arreglo', $aside);
         $this->smarty->display('templates/pc_detail.tpl');
     }
+
+    function viewPcByGama($pc, $aside, $URL){
+        $this->smarty->assign('url', $URL);             
+        $this->smarty->assign('pc_arreglo', $pc);
+        $this->smarty->assign('gama_arreglo', $aside);
+        $this->smarty->display('templates/pc_viewByGama.tpl');
+    }
 }

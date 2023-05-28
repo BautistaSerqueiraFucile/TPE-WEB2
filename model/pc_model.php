@@ -22,4 +22,10 @@ class pc_model{
         $sentencia->execute(array($id));
         return ($sentencia->fetch(PDO::FETCH_OBJ)); 
     }
+
+    function GetPcByGama($gama){
+        $sentencia = $this->db->prepare('SELECT * FROM pc JOIN gama on pc.id_gama = gama.id_gama WHERE pc.id_gama=?');
+        $sentencia->execute(array($gama));
+        return ($sentencia->fetchAll(PDO::FETCH_OBJ)); 
+    }
 }
