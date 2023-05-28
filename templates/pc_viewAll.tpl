@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <base href={$url}>
+    <title>{$title}</title>
 </head>
 <body>
     {include file= "header.tpl"}
@@ -14,7 +15,7 @@
     <section>
         {foreach from=$pc_arreglo item=$elemento}
         <article>
-            <a href="////">
+            <a href="detail/{$elemento->id_pc}">
                 <ul>
                 <li>ID PC: {$elemento->id_pc}</li>
                     <li>Motherboard: {$elemento->motherboard}</li>

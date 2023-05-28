@@ -18,8 +18,12 @@ public function __construct(){
 
     }
 
-    public function showAllPc(){
-                       
-        $this->pc_view->viewAllPc( $this->pc_model->getAllPc(), $this->gama_model->getAllGama() );
-    }  
+    public function showAllPc($URL){                
+        $this->pc_view->viewAllPc( $this->pc_model->GetAllPc(), $this->gama_model->getAllGama(), $URL);
+    }
+    
+    public function showDetailPc($id,$URL){
+        $pc = $this->pc_model->GetPcById($id);
+        $this->pc_view->ViewDetailPc($id, $pc, $this->gama_model->getAllGama(), $URL);
+    }
 }

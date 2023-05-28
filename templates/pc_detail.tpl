@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <base href={$url}>
-    <title>{$title}</title>
+    <title>Detail pc: {$title}</title>
 </head>
 <body>
-    {include file= "header.tpl"}
-    <h1>Esto es {$a} </h1>
-    {include file= "footer.tpl"}
+    {include file="header.tpl"}
+    <main class="main">
+        {include file= "aside.tpl"}
+        <section>
+            
+        </section>
+        </main>
+    {include file="footer.tpl"}
 </body>
 </html>
