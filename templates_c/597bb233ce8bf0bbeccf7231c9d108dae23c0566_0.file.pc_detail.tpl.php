@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-29 00:49:49
+/* Smarty version 4.3.1, created on 2023-05-29 18:44:10
   from 'D:\Descargas\Xampp\htdocs\proyectos\TPE-WEB2\templates\pc_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6473da8dc11931_51678637',
+  'unifunc' => 'content_6474d65a552f54_54967831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '597bb233ce8bf0bbeccf7231c9d108dae23c0566' => 
     array (
       0 => 'D:\\Descargas\\Xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\pc_detail.tpl',
-      1 => 1685314171,
+      1 => 1685378590,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6473da8dc11931_51678637 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6474d65a552f54_54967831 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -41,23 +41,16 @@ function content_6473da8dc11931_51678637 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <main class="main">
+    <main class="main">    
         <?php $_smarty_tpl->_subTemplateRender("file:aside.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+?>    
         <section class="detail">
             <div class="title">
                 <h1>Detail pc <?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
             </div>
             <div id="container">
-                <article class="x3">
-                    <div class="title">
-                        <h2>Pc Description</h2>
-                    </div>
-                    <p><?php echo $_smarty_tpl->tpl_vars['pc']->value->description_pc;?>
-</p>
-                </article>
-                <article class="x3" id="tablediv">
+            <article class="x3" id="tablediv">
                     <table>
                         <tbody>
                             <tr>
@@ -85,11 +78,19 @@ function content_6473da8dc11931_51678637 (Smarty_Internal_Template $_smarty_tpl)
                 </article>
                 <article class="x3">
                     <div class="title">
+                        <h2>Pc Description</h2>
+                    </div>
+                    <p><?php echo $_smarty_tpl->tpl_vars['pc']->value->description_pc;?>
+</p>
+                </article>                
+                <article class="x3">
+                    <div class="title">
                         <h2>Gama Description</h2>
                     </div>
                     <p><?php echo $_smarty_tpl->tpl_vars['pc']->value->description_gama;?>
 </p>
                 </article>
+
             </div>
         </section>
     </main>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2023 a las 21:51:33
+-- Tiempo de generación: 29-05-2023 a las 18:49:49
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -30,8 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `gama` (
   `id_gama` int(11) NOT NULL,
   `name` varchar(40) NOT NULL,
-  `description` varchar(400) NOT NULL
+  `description_gama` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `gama`
+--
+
+INSERT INTO `gama` (`id_gama`, `name`, `description_gama`) VALUES
+(1, 'gama 1', 'descripcion gama 1'),
+(2, 'gama 2', 'descripcion gama 2');
 
 -- --------------------------------------------------------
 
@@ -44,9 +52,30 @@ CREATE TABLE `pc` (
   `motherboard` varchar(40) NOT NULL,
   `processor` varchar(40) NOT NULL,
   `video` varchar(40) NOT NULL,
-  `description` varchar(400) NOT NULL,
+  `description_pc` varchar(400) NOT NULL,
+  `RAM` varchar(50) NOT NULL,
   `id_gama` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pc`
+--
+
+INSERT INTO `pc` (`id_pc`, `motherboard`, `processor`, `video`, `description_pc`, `RAM`, `id_gama`) VALUES
+(1, 'm1', 'p1', 'v1', 'adsa', '16 gb', 1),
+(2, 'm2', 'm2', 'm2', 'descripcion m2 ', '8 gb', 2),
+(3, 'm3', 'm3', 'm3', 'descripcion m23', '8 gb', 2),
+(4, 'm4', 'm4', 'm4', 'descripcion m4', '8 gb', 2),
+(6, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(7, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(8, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(9, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(10, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(11, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(12, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(13, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(14, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
+(15, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2);
 
 -- --------------------------------------------------------
 
@@ -75,7 +104,8 @@ ALTER TABLE `gama`
 -- Indices de la tabla `pc`
 --
 ALTER TABLE `pc`
-  ADD PRIMARY KEY (`id_pc`);
+  ADD PRIMARY KEY (`id_pc`),
+  ADD KEY `id_gama` (`id_gama`);
 
 --
 -- Indices de la tabla `user`
@@ -91,19 +121,29 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `gama`
 --
 ALTER TABLE `gama`
-  MODIFY `id_gama` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `pc`
+--
+ALTER TABLE `pc`
+  ADD CONSTRAINT `id_gama` FOREIGN KEY (`id_gama`) REFERENCES `gama` (`id_gama`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
