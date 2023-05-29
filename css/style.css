@@ -20,11 +20,15 @@ a{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+section{
+    width: 100%;
+}
+
 /* Inicio estilo pagina Home */
 
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-arou nd;
     width: 10%;
     margin-right: 10px;
 }
