@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-28 22:29:33
+/* Smarty version 4.3.1, created on 2023-05-29 02:08:39
   from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\pc_viewAll.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6473b9adb87b35_55305159',
+  'unifunc' => 'content_6473ed07c61018_67418228',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '44a5e823df043383875acaa2a652d9be31e9b0d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\pc_viewAll.tpl',
-      1 => 1685305772,
+      1 => 1685318845,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6473b9adb87b35_55305159 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6473ed07c61018_67418228 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +43,8 @@ function content_6473b9adb87b35_55305159 (Smarty_Internal_Template $_smarty_tpl)
     <?php $_smarty_tpl->_subTemplateRender("file:aside.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <section>
+        
+    <div class="contenido">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pc_arreglo']->value, 'elemento');
 $_smarty_tpl->tpl_vars['elemento']->do_else = true;
@@ -71,6 +73,7 @@ $_smarty_tpl->tpl_vars['elemento']->do_else = false;
         <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+    </div>
     </section>
     </main>
     <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

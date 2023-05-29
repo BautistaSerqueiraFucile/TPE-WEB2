@@ -13,6 +13,8 @@
     <main class="main">
     {include file= "aside.tpl"}
     <section>
+        
+    <div class="contenido">
         {foreach from=$pc_arreglo item=$elemento}
         <article>
             <a href="detail/{$elemento->id_pc}">
@@ -27,6 +29,7 @@
             </a>
         </article>
         {/foreach}
+    </div>
     </section>
     </main>
     {include file= "footer.tpl"}

@@ -1,3 +1,4 @@
+<div class="aside">
 <aside>
     <ul>
     <a href="home">
@@ -13,3 +14,4 @@
         {/foreach}
     </ul>
 </aside>
+</div>

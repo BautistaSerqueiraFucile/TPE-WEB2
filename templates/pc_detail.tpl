@@ -12,20 +12,14 @@
 
 <body>
     {include file="header.tpl"}
-    <main class="main">
-        {include file= "aside.tpl"}
+    <main class="main">    
+        {include file= "aside.tpl"}    
         <section class="detail">
             <div class="title">
                 <h1>Detail pc {$title}</h1>
             </div>
             <div id="container">
-                <article class="x3">
-                    <div class="title">
-                        <h2>Pc Description</h2>
-                    </div>
-                    <p>{$pc->description_pc}</p>
-                </article>
-                <article class="x3" id="tablediv">
+            <article class="x3" id="tablediv">
                     <table>
                         <tbody>
                             <tr>
@@ -49,10 +43,17 @@
                 </article>
                 <article class="x3">
                     <div class="title">
+                        <h2>Pc Description</h2>
+                    </div>
+                    <p>{$pc->description_pc}</p>
+                </article>                
+                <article class="x3">
+                    <div class="title">
                         <h2>Gama Description</h2>
                     </div>
                     <p>{$pc->description_gama}</p>
                 </article>
+
             </div>
         </section>
     </main>
