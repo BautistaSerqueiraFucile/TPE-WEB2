@@ -10,10 +10,8 @@ class gama_view {
 
 // funcion para hacer la vista de las gamas    
 function viewAllGama($gama,$URL) {
-
         $this->smarty->assign('url', $URL);                
-        $this->smarty->assign('gama_arreglo', $gama);      
-        
+        $this->smarty->assign('gama_arreglo', $gama);              
         $this->smarty->display('templates/gama_viewAll.tpl');
     }
 }

@@ -14,7 +14,8 @@ public function __construct(){
         $this->gama_view= new gama_view();
     }
 
-    public function showAllGama($URL){                
+    public function showAllGama($URL){  
+        
         $this->gama_view->viewAllGama( $this->gama_model->getAllGama(), $URL);
     }
     

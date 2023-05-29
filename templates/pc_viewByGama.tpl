@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <base href={$url}>
-    <title>Visualizando Gama: {$gama}</title>
+    <title>Visualizando Gama: {$pc_arreglo[0]->name}</title>
 </head>
 <body>
     {include file= "header.tpl"}
