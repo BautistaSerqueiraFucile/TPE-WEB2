@@ -4,9 +4,11 @@ define( 'URL', '//'.$_SERVER[ 'SERVER_NAME' ].':'.$_SERVER[ 'SERVER_PORT' ].dirn
 
 require_once 'controller/pc_controller.php';
 require_once 'controller/gama_controller.php';
+require_once ('controller/user_controller.php');
 
 $pc_control = new pc_controller();
 $gama_control = new gama_controller();
+$user_control = new user_controller();
 
 if ( !empty( $_REQUEST[ 'action' ] ) ) {
     $action = $_REQUEST[ 'action' ];
@@ -28,5 +30,8 @@ switch ( $parameters[ 0 ] ) {
     break;
     case 'gamas':
         $gama_control->showAllGama(URL);
-        break;
+    break;
+    case 'login':
+        $user_control->showLogin(URL);
+    break;
 }

@@ -122,6 +122,15 @@ table{
     height: auto;
 }
 
+/* Comienzo estilo login */
+
+#login{
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fin estilo login */
+
 /* fin estilo pagina detail  */
 
 footer{
