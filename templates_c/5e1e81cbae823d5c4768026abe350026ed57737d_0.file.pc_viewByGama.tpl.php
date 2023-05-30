@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-29 19:07:40
+/* Smarty version 4.3.1, created on 2023-05-30 17:27:22
   from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\pc_viewByGama.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6474dbdc318bf9_50561519',
+  'unifunc' => 'content_647615da7c9e81_60130441',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e1e81cbae823d5c4768026abe350026ed57737d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\pc_viewByGama.tpl',
-      1 => 1685380049,
+      1 => 1685452530,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6474dbdc318bf9_50561519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647615da7c9e81_60130441 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +33,7 @@ function content_6474dbdc318bf9_50561519 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="../css/style.css">
     <base href=<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 >
-    <title>Visualizando Gama: <?php echo $_smarty_tpl->tpl_vars['pc_arreglo']->value[0]->name;?>
+    <title>Visualizando Gama: <?php echo $_smarty_tpl->tpl_vars['pc_arreglo']->value[0]->name_gama;?>
 </title>
 </head>
 <body>
@@ -64,7 +64,7 @@ $_smarty_tpl->tpl_vars['elemento']->do_else = false;
 </li>
                     <li>RAM: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->RAM;?>
 </li>
-                    <li>Gama: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->name;?>
+                    <li>Gama: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->name_gama;?>
 </li>
                 </ul>
             </a>

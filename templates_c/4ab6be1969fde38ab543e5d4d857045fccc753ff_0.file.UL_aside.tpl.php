@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-30 15:15:43
-  from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\aside.tpl' */
+/* Smarty version 4.3.1, created on 2023-05-30 17:49:23
+  from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\UL_aside.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6475f6ffc5f821_24182144',
+  'unifunc' => 'content_64761b032c9b41_30759029',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'aac3bd652eee4627c181135fec1ca50eaa014518' => 
+    '4ab6be1969fde38ab543e5d4d857045fccc753ff' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\aside.tpl',
-      1 => 1685452522,
+      0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\UL_aside.tpl',
+      1 => 1685461761,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6475f6ffc5f821_24182144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64761b032c9b41_30759029 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="aside">
 <aside>
-    <ul>   
+    <ul>    
          <a href="gamas">
             <li>Informacion de Gamas</li>
         </a>

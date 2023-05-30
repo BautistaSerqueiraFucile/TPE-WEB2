@@ -38,4 +38,8 @@ public function __construct(){
         $gama = $this->gama_model->getAllGama();  
         $this->pc_view->viewPcByGama($pc, $gama, $URL);
     }
+
+    public function UL_deletePcByGama($gama){
+        $pc = $this->pc_model->deletePcByGama($gama);        
+    }
 }

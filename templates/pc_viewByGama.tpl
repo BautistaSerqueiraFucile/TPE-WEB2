@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <base href={$url}>
-    <title>Visualizando Gama: {$pc_arreglo[0]->name}</title>
+    <title>Visualizando Gama: {$pc_arreglo[0]->name_gama}</title>
 </head>
 <body>
     {include file= "header.tpl"}
@@ -23,7 +23,7 @@
                     <li>Processor: {$elemento->processor}</li>
                     <li>Video Card: {$elemento->video}</li>
                     <li>RAM: {$elemento->RAM}</li>
-                    <li>Gama: {$elemento->name}</li>
+                    <li>Gama: {$elemento->name_gama}</li>
                 </ul>
             </a>
         </article>

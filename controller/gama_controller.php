@@ -18,5 +18,24 @@ public function __construct(){
         $gamas = $this->gama_model->getAllGama();                
         $this->gama_view->viewAllGama($gamas, $URL);
     }
-    
+
+    public function UL_showAllGama($URL){
+        $gamas = $this->gama_model->getAllGama();                
+        $this->gama_view->UL_viewAllGama($gamas, $URL);
+    }
+
+    public function UL_editGama($id_gama,$URL){
+        $elemento = $this->gama_model->searchGama($id_gama);  
+        $gamas = $this->gama_model->getAllGama();              
+        $this->gama_view->UL_viewEditGama($gamas,$elemento, $URL);
+    }
+
+    public function UL_modifieGama($elemento, $gama){
+         $this->gama_model->putGama($elemento, $gama); 
+         
+    }
+    public function UL_deleteGama($elemento){
+        $this->gama_model->deleteGama($elemento); 
+        
+   }
 }

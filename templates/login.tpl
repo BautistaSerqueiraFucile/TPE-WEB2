@@ -11,7 +11,7 @@
 <body>
     {include file = 'header.tpl'}
     <main class="main" id="login">
-            <h1>LOGIN</h1>
+            <h1>LOGIN</h1>          
     </main>
     {include file = 'footer.tpl'}
 </body>

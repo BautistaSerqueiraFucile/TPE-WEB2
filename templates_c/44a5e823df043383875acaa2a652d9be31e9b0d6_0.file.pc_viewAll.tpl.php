@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-29 02:08:39
+/* Smarty version 4.3.1, created on 2023-05-30 15:15:43
   from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\pc_viewAll.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6473ed07c61018_67418228',
+  'unifunc' => 'content_6475f6ffab8575_04262031',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '44a5e823df043383875acaa2a652d9be31e9b0d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\pc_viewAll.tpl',
-      1 => 1685318845,
+      1 => 1685452428,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6473ed07c61018_67418228 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6475f6ffab8575_04262031 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +65,7 @@ $_smarty_tpl->tpl_vars['elemento']->do_else = false;
 </li>
                     <li>RAM: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->RAM;?>
 </li>
-                    <li>Gama: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->name;?>
+                    <li>Gama: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->name_gama;?>
 </li>
                 </ul>
             </a>

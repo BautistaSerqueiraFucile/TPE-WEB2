@@ -31,4 +31,24 @@ class pc_model{
         $sentencia->execute(array($gama));
         return ($sentencia->fetchAll(PDO::FETCH_OBJ)); 
     }
+
+    function postPc($pc){
+        $respuesta = $this->db->prepare( 'INSERT INTO pc (id_pc, motherboard, processor, video, description_pc, RAM, id_gama) value(?,?,?,?,?,?,?)' );
+        $respuesta->execute( array( '', $pc[ 'motherboard' ], $pc[ 'procesor' ],$pc[ 'video' ],$pc[ 'description_pc' ],$pc[ 'RAM' ],$pc[ 'id_gama' ] ) );
+    }
+
+    function putPc($pc){
+        $respuesta = $this->db->prepare( 'UPDATE pc SET motherboard=? SET processor=? SET video=? SET description_pc=? SET RAM=? SET id_gama=? WHERE (id_pc= ?)' );
+        $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'description_pc' ],$pc[ 'RAM' ],$pc[ 'id_gama' ],$pc[ 'id_pc' ] ));
+    }
+
+    function deletetPc($pc){
+        $respuesta = $this->db->prepare( 'DELETE FROM pc WHERE id_pc=?' );
+        $respuesta->execute( array( $pc['id_pc'] ) );
+    }
+    
+    function deletePcByGama($gama){
+        $respuesta = $this->db->prepare( 'DELETE FROM pc WHERE id_gama=?' );
+        $respuesta->execute( array( $gama) );
+    }
 }
