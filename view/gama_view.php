@@ -29,10 +29,12 @@ function viewAllGama($gamas,$URL) {
 
         $this->smarty->assign('url', $URL);                
         $this->smarty->assign('elemento', $elemento);  
-        $this->smarty->assign('gama_arreglo', $gamas);    
-        
+        $this->smarty->assign('gama_arreglo', $gamas); 
         $this->smarty->display('templates/UL_gama_edit.tpl');
+        $this->smarty->display('templates/gamas.tpl');
     }
+
+    
 
 
     

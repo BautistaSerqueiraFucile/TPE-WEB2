@@ -15,6 +15,7 @@
     <section class="gama">            
         {foreach from=$gama_arreglo item=$elemento}        
         <article>
+        <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/aI9NjVi7UOyVP5Nz24eN/imagen" alt="PCBYGAMA">
             <a href="gama/{$elemento->id_gama}">
                 <ul>
                 <li>ID GAMA: {$elemento->id_gama}</li>

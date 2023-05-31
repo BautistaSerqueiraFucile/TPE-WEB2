@@ -21,13 +21,14 @@ $parameters = explode( '/', $action );
 
 switch ( $parameters[ 0 ] ) {
     case 'home':
-    $pc_control->showAllPc( URL );
+    $pc_control->UL_showAllPc( URL );
     break;
+    
     case 'detail':
     $pc_control->showDetailPc( $parameters[ 1 ], URL );
     break;
     case 'gama':
-    $pc_control->showGamaPc( $parameters[ 1 ], URL );
+    $pc_control->UL_viewPcByGama( $parameters[ 1 ], URL );
     break;
     case 'gamas':
         //$gama_control->showAllGama(URL);
@@ -38,23 +39,20 @@ switch ( $parameters[ 0 ] ) {
         $user_control->showLogin( URL );
         break; 
 
-    case 'editarGama':
-        $gama_control->UL_editGama( $parameters[ 1 ],URL);       
+    case 'editarPc':
+        $pc_control->UL_editPc( $parameters[ 1 ],URL);       
     break;
 
-    case 'modificarGama':              ;
-        $gama_control->UL_modifieGama( $parameters[ 1 ] ,$_REQUEST);  
-        header('location: '.URL.'gamas');     
+    case 'modificarPc':              ;
+        $pc_control->UL_modifiePc( $parameters[ 1 ] ,$_REQUEST);  
+        header('location: '.URL.'home');     
     break;
 
     //CONSULTAR SI, CUANDO ELIMINA UNA GAMA TIENE QUE ELIMINAR NECESARIAMENTE TODAS LAS PC PERTENECIENTE A ESA 
     //GAMA TAMBIEN
-    case 'eliminarGama':  
-        var_dump($_REQUEST)      ;
-        var_dump($parameters[ 1 ])      ;
-        $pc_control->UL_deletePcByGama( $parameters[ 1 ]);  
-        $gama_control->UL_deleteGama( $parameters[ 1 ]);  
-        header('location: '.URL.'gamas');     
+    case 'eliminarPc':                ;
+        $pc_control->UL_deletePc( $parameters[ 1 ]);            
+        header('location: '.URL.'home');     
     break;
 
 }

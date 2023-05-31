@@ -13,7 +13,7 @@
     <main class="main">
     {include file= "UL_aside.tpl"}
     <section class="gama">                    
-        <article class="gama-edit">
+        <article class="pc-gama-edit">
             <form action="modificarGama/{$elemento->id_gama}">                
                     <div>
                         <label for="">Gama: </label>
@@ -23,8 +23,7 @@
                         <label for="">Descripcion</label>
                         <input type="text" name="description_gama" value="{$elemento->description_gama}">                    
                     </div>
-                    <input type="submit" value="Editar">              
-                
+                    <input type="submit" value="Editar">     
             </form>            
         </article>        
     </section>

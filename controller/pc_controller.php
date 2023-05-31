@@ -39,7 +39,32 @@ public function __construct(){
         $this->pc_view->viewPcByGama($pc, $gama, $URL);
     }
 
-    public function UL_deletePcByGama($gama){
-        $pc = $this->pc_model->deletePcByGama($gama);        
+
+    public function UL_showAllPc($URL){
+        $pc = $this->pc_model->GetAllPc();
+        $gama = $this->gama_model->getAllGama();                
+        $this->pc_view->UL_viewAllPc( $pc, $gama, $URL);
     }
+    
+    public function UL_editPc($id_pc,$URL){
+        $elemento = $this->pc_model->searchPc($id_pc);  
+        $gamas = $this->gama_model->getAllGama();              
+        $this->pc_view->UL_viewEditPc($gamas,$elemento, $URL);
+    }
+
+    public function UL_modifiePc($id_pc, $elemento){        
+         $this->pc_model->putPc($id_pc, $elemento);          
+    }
+
+    public function UL_deletePc($elemento){
+        $this->pc_model->deletePc($elemento); 
+        
+   }
+   public function UL_viewPcByGama($gama,$URL){
+    $pc = $this->pc_model->GetPcByGama($gama);
+    $gama = $this->gama_model->getAllGama();  
+    $this->pc_view->UL_viewPcByGama($pc, $gama, $URL);
+}
+   
+
 }

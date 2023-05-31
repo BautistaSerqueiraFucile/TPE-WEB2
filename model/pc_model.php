@@ -40,18 +40,25 @@ class pc_model{
         $respuesta->execute( array( '', $pc[ 'motherboard' ], $pc[ 'procesor' ],$pc[ 'video' ],$pc[ 'description_pc' ],$pc[ 'RAM' ],$pc[ 'id_gama' ] ) );
     }
 
-    function putPc($pc){
-        $respuesta = $this->db->prepare( 'UPDATE pc SET motherboard=? SET processor=? SET video=? SET description_pc=? SET RAM=? SET id_gama=? WHERE (id_pc= ?)' );
-        $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'description_pc' ],$pc[ 'RAM' ],$pc[ 'id_gama' ],$pc[ 'id_pc' ] ));
+    function putPc($id_pc,$pc){
+        var_dump($pc);
+        $respuesta = $this->db->prepare( 'UPDATE pc SET motherboard=?, processor=?, video=?, RAM=?, id_gama=? WHERE (id_pc= ?)' );
+        $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'RAM' ],$pc[ 'gama' ],$id_pc));
     }
 
-    function deletetPc($pc){
+    function deletePc($pc){
         $respuesta = $this->db->prepare( 'DELETE FROM pc WHERE id_pc=?' );
-        $respuesta->execute( array( $pc['id_pc'] ) );
+        $respuesta->execute( array( $pc) );
     }
     
     function deletePcByGama($gama){
         $respuesta = $this->db->prepare( 'DELETE FROM pc WHERE id_gama=?' );
         $respuesta->execute( array( $gama) );
+    }
+
+    function searchPc($pc) {
+        $respuesta = $this->db->prepare( 'SELECT * FROM pc JOIN gama on (pc.id_gama=gama.id_gama) WHERE (id_pc=?)' );
+        $respuesta->execute( array($pc));    
+        return ($respuesta->fetch( PDO::FETCH_OBJ ) );
     }
 }
