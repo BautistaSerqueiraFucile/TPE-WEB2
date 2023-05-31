@@ -1,6 +1,6 @@
 
 <aside>
-    <ul>   
+    <ul>    
          <a href="gamas">
             <li>Informacion de Gamas</li>
         </a>

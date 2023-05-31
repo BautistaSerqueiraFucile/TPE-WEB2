@@ -11,7 +11,7 @@
 <body>
     {include file= "UL_header.tpl"}
     <main class="main">
-    {include file= "UL_aside.tpl"}
+    {include file= "aside.tpl"}
     <section class="gama">                    
         <article class="pc-gama-edit">
             <form action="modificarGama/{$elemento->id_gama}">                

@@ -11,7 +11,7 @@
 <body>
     {include file= "UL_header.tpl"}
     <main class="main">
-    {include file= "UL_aside.tpl"}
+    {include file= "aside.tpl"}
     <section>
         <div class="contenido">
         {foreach from=$pc_arreglo item=$elemento}
