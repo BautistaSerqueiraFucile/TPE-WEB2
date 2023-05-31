@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2023 a las 18:49:49
+-- Tiempo de generación: 31-05-2023 a las 20:46:57
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `gama` (
   `id_gama` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
+  `name_gama` varchar(40) NOT NULL,
   `description_gama` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -37,9 +37,10 @@ CREATE TABLE `gama` (
 -- Volcado de datos para la tabla `gama`
 --
 
-INSERT INTO `gama` (`id_gama`, `name`, `description_gama`) VALUES
-(1, 'gama 1', 'descripcion gama 1'),
-(2, 'gama 2', 'descripcion gama 2');
+INSERT INTO `gama` (`id_gama`, `name_gama`, `description_gama`) VALUES
+(8, 'Gama alta', 'Pc de alto rendimiento, la mejor calidad'),
+(9, 'Gama media', 'Pc con un buen rendimiento'),
+(10, 'Gama baja', 'Pc con poco rendimiento para usos específicos y sencillos');
 
 -- --------------------------------------------------------
 
@@ -62,20 +63,9 @@ CREATE TABLE `pc` (
 --
 
 INSERT INTO `pc` (`id_pc`, `motherboard`, `processor`, `video`, `description_pc`, `RAM`, `id_gama`) VALUES
-(1, 'm1', 'p1', 'v1', 'adsa', '16 gb', 1),
-(2, 'm2', 'm2', 'm2', 'descripcion m2 ', '8 gb', 2),
-(3, 'm3', 'm3', 'm3', 'descripcion m23', '8 gb', 2),
-(4, 'm4', 'm4', 'm4', 'descripcion m4', '8 gb', 2),
-(6, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(7, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(8, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(9, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(10, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(11, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(12, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(13, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(14, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2),
-(15, 'ab-350', 'Intel', 'Nvidia', 'Computador diseñada para gaming', '32 gb', 2);
+(25, 'ab-250', 'Intel i7', 'Nvidia 9310', 'Pc con muy buen diseño y rendimiento', '16 GB', 8),
+(26, 'ac-201', 'Ryzen 2103', 'Rtx 3020', 'Pc gama media con rendimiento moderado', '8 GB', 9),
+(27, 'pz-910', 'Intel i3 2000', 'Intel graphics', 'Pc gama baja para usos específicos y poco exigentes ', '4 GB', 10);
 
 -- --------------------------------------------------------
 
@@ -121,13 +111,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `gama`
 --
 ALTER TABLE `gama`
-  MODIFY `id_gama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_gama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
