@@ -13,13 +13,18 @@
     <main class="main">
     {include file= "UL_aside.tpl"}
     <section class="gama">                    
-        <article >
-            <form action="modificarGama/{$elemento->id_gama}">
-                <label for="">Gama</label>
-                <input type="text" name="name_gama" value="{$elemento->name_gama}">
-                <label for="">Descripcion</label>
-                <input type="text" name="description_gama" value="{$elemento->description_gama}">
-                <input type="submit" value="Enviar">
+        <article class="gama-edit">
+            <form action="modificarGama/{$elemento->id_gama}">                
+                    <div>
+                        <label for="">Gama: </label>
+                        <input type="text" name="name_gama" value="{$elemento->name_gama}">
+                    </div>
+                    <div>
+                        <label for="">Descripcion</label>
+                        <input type="text" name="description_gama" value="{$elemento->description_gama}">                    
+                    </div>
+                    <input type="submit" value="Editar">              
+                
             </form>            
         </article>        
     </section>

@@ -1,4 +1,4 @@
-<div class="aside">
+
 <aside>
     <ul>    
          <a href="gamas">
@@ -11,4 +11,3 @@
         {/foreach}
     </ul>
 </aside>
-</div>

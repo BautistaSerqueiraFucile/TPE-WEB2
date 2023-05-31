@@ -12,13 +12,12 @@
     {include file= "header.tpl"}
     <main class="main">
     {include file= "aside.tpl"}
-    <section>
-        
-    <div class="contenido">
+    <section class="seccionPc">            
         {foreach from=$pc_arreglo item=$elemento}
         <article>
             <a href="detail/{$elemento->id_pc}">
                 <ul>
+                <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/JsxkDHYTeoqs0meqg4G2/imagen" alt="PC ARMADA">
                 <li>ID PC: {$elemento->id_pc}</li>
                     <li>Motherboard: {$elemento->motherboard}</li>
                     <li>Processor: {$elemento->processor}</li>
@@ -28,8 +27,7 @@
                 </ul>
             </a>
         </article>
-        {/foreach}
-    </div>
+        {/foreach}    
     </section>
     </main>
     {include file= "footer.tpl"}

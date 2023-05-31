@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-30 17:45:51
+/* Smarty version 4.3.1, created on 2023-05-31 00:12:41
   from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\UL_gama_viewAll.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64761a2ff28503_68404545',
+  'unifunc' => 'content_647674d93bbed1_13089946',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '96361a0c17f400c1d9962f1a68b42855fadf9207' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\UL_gama_viewAll.tpl',
-      1 => 1685461550,
+      1 => 1685484742,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_64761a2ff28503_68404545 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647674d93bbed1_13089946 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +49,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['elemento']->valu
 $_smarty_tpl->tpl_vars['elemento']->do_else = false;
 ?>        
         <article>
+            <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/aI9NjVi7UOyVP5Nz24eN/imagen" alt="PCBYGAMA">
             <a href="gama/<?php echo $_smarty_tpl->tpl_vars['elemento']->value->id_gama;?>
 ">
                 <ul>

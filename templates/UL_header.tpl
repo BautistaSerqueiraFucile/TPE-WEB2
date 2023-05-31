@@ -1,5 +1,7 @@
     <header>
-    <h1>Pc selling page</h1>
+    <div>
+        <h1>Pc selling page</h1>
+    </div>
         <nav>
             <a href="login">home</a>
             <a href="AltaPc">Alta PC</a>

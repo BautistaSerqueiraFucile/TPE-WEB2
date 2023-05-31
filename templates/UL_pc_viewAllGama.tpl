@@ -17,7 +17,7 @@
         {foreach from=$pc_arreglo item=$elemento}
         <article>
             <a href="detail/{$elemento->id_pc}">
-                <ul>
+                <ul>                
                 <li>ID PC: {$elemento->id_pc}</li>
                     <li>Motherboard: {$elemento->motherboard}</li>
                     <li>Processor: {$elemento->processor}</li>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-30 17:27:22
+/* Smarty version 4.3.1, created on 2023-05-31 00:24:50
   from 'C:\xampp\htdocs\proyectos\TPE-WEB2\templates\pc_viewByGama.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647615da7c9e81_60130441',
+  'unifunc' => 'content_647677b2be57c3_31314740',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e1e81cbae823d5c4768026abe350026ed57737d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE-WEB2\\templates\\pc_viewByGama.tpl',
-      1 => 1685452530,
+      1 => 1685485384,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647615da7c9e81_60130441 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647677b2be57c3_31314740 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,8 +42,7 @@ function content_647615da7c9e81_60130441 (Smarty_Internal_Template $_smarty_tpl)
     <main class="main">
     <?php $_smarty_tpl->_subTemplateRender("file:aside.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <section>
-        <div class="contenido">
+    <section class="seccionPc">        
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pc_arreglo']->value, 'elemento');
 $_smarty_tpl->tpl_vars['elemento']->do_else = true;
@@ -54,6 +53,8 @@ $_smarty_tpl->tpl_vars['elemento']->do_else = false;
             <a href="detail/<?php echo $_smarty_tpl->tpl_vars['elemento']->value->id_pc;?>
 ">
                 <ul>
+                <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/aI9NjVi7UOyVP5Nz24eN/imagen" alt="PCBYGAMA">
+                
                 <li>ID PC: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->id_pc;?>
 </li>
                     <li>Motherboard: <?php echo $_smarty_tpl->tpl_vars['elemento']->value->motherboard;?>
@@ -71,8 +72,7 @@ $_smarty_tpl->tpl_vars['elemento']->do_else = false;
         </article>
         <?php
 }
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-    </div>
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?> 
     </section>
     </main>
     <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
