@@ -9,10 +9,28 @@
     <title>{$title}</title>
 </head>
 <body>
-    {include file = 'header.tpl'}
-    <main class="main" id="login">
-            <h1>LOGIN</h1>          
+  {include file= "UL_header.tpl"}
+    <main class="main">
+    {include file= "aside.tpl"}
+    <section class="gama">                    
+        <article class="pc-gama-edit">                                     
+                    <div> 
+                        <label for="">Nombre de usuario</label>                       
+                        <input type="text" name="name" >
+                    </div>
+                    <div>                        
+                        <label for="">Email</label>                       
+                        <input type="text" name="email" pleaceholder="Email">                    
+                    </div>
+                    <div>                        
+                        <label for="">Password</label>                       
+                        <input type="text" name="password"pleaceholder="Password">                    
+                    </div>
+                    <input type="submit" value="LogIn">     
+            </form>            
+        </article>        
+    </section>
     </main>
-    {include file = 'footer.tpl'}
+    {include file= "footer.tpl"}
 </body>
 </html>

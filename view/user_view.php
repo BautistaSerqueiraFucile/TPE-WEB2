@@ -9,9 +9,10 @@ class user_view{
         $this->smarty = new smarty();
     }
 
-    public function ViewForm($url){
+    public function ViewForm($gamas,$url){
         $this->smarty->assign('url', $url);
         $this->smarty->assign('title', 'Form');
+        $this->smarty->assign('gama_arreglo', $gamas);
         $this->smarty->display('templates/login.tpl');
     }
 }

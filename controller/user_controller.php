@@ -12,6 +12,7 @@ class user_controller{
     }
 
     function showLogin($url){
-        $this->user_view->ViewForm($url);
+        $gamas = $this->gama_model->getAllGama(); 
+        $this->user_view->ViewForm($gamas,$url);
     }
 }

@@ -100,6 +100,10 @@ input:focus,select, input{
     margin: 75px 0 75px 0;
 }
 
+.pc-gama-edit div{
+    display: flex;
+    flex-direction: column;
+}
 .gama-edit form{
     align-items: flex-start;
 }

@@ -47,7 +47,7 @@ class pc_model{
 
     function deletePc($id_pc){
         $respuesta = $this->db->prepare( 'DELETE FROM pc WHERE id_pc=?' );
-        $respuesta->execute( array( $pc) );
+        $respuesta->execute( array($pc) );
     }
     
     function deletePcByGama($id_gama){
