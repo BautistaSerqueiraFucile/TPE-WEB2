@@ -35,7 +35,6 @@ public function __construct(){
          
     }
     public function UL_deleteGama($elemento){
-        $this->gama_model->deleteGama($elemento); 
-        
+        $this->gama_model->deleteGama($elemento);         
    }
 }

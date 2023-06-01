@@ -33,7 +33,7 @@
                     </div>
                      <div>
                         <label for="">GAMA</label>
-                        <input type="text" name="name_gama" value="{$elemento->name_gama}">                    
+                        <input type="text" name="name_gama" value="{$elemento->name_gama}" readonly>                    
                     </div>
                     <div>                        
                         {include file= "gamas.tpl"}

@@ -40,8 +40,8 @@ a{
 
 input,label,select{    
     
-    font-size: 20px;
-    font-weight:550;   
+    font-size: 15px;
+    font-weight:600;   
 }
 
 .main{
@@ -97,7 +97,7 @@ input:focus,select, input{
 }
 
 .pc-gama-edit{
-    margin-top: 180px;
+    margin: 75px 0 75px 0;
 }
 
 .gama-edit form{

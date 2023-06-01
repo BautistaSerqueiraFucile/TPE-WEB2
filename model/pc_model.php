@@ -43,7 +43,7 @@ class pc_model{
     function putPc($id_pc,$pc){
         var_dump($pc);
         $respuesta = $this->db->prepare( 'UPDATE pc SET motherboard=?, processor=?, video=?, RAM=?, id_gama=? WHERE (id_pc= ?)' );
-        $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'RAM' ],$pc[ 'gama' ],$id_pc));
+        $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'RAM' ], $pc[ 'gama' ],$id_pc));
     }
 
     function deletePc($pc){
