@@ -35,6 +35,12 @@ class gama_model{
         return ($respuesta->fetch( PDO::FETCH_OBJ ) );
     }
 
+    function searchGamaByName($gama) {
+        $respuesta = $this->db->prepare( 'SELECT * FROM gama WHERE (name_gama=?)' );
+        $respuesta->execute( array($gama));    
+        return ($respuesta->fetch( PDO::FETCH_OBJ ) );
+    }
+
 
 
 
