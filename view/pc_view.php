@@ -55,4 +55,11 @@ class pc_view{
         $this->smarty->assign('gama_arreglo', $gamas);
         $this->smarty->display('templates/pc_templates/UL_pc_viewByGama.tpl');
     }
+
+    function UL_viewAltaPc($gamas, $URL){
+        $this->smarty->assign('url', $URL);        
+        $this->smarty->assign('gama_arreglo', $gamas);
+        $this->smarty->display('templates/pc_templates/UL_pc_Create.tpl');
+    }
+
 }

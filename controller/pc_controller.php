@@ -64,7 +64,15 @@ public function __construct(){
     $pc = $this->pc_model->GetPcByGama($gama);
     $gama = $this->gama_model->getAllGama();  
     $this->pc_view->UL_viewPcByGama($pc, $gama, $URL);
-}
-   
+    }
 
+    public function UL_showAltaPc($URL){
+        $gama = $this->gama_model->getAllGama();  
+        $this->pc_view->UL_viewAltaPc($gama, $URL);
+    }
+
+    public function UL_CreatePc($query){
+        $this->pc_model->postPc($query);
+    }
+   
 }

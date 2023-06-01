@@ -14,7 +14,7 @@
     {include file= "../aside.tpl"}
     <section class="gama">                    
         <article class="pc-gama-edit">
-            <form action="crearPC">                
+            <form action="createPc">                
                     <div>
                         <label for="">Pc Motherboard: </label>
                         <input type="text" name="motherboard">

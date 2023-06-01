@@ -31,6 +31,10 @@
                         <label for="">RAM</label>
                         <input type="text" name="RAM" value="{$elemento->RAM}">                    
                     </div>
+                    <div>
+                        <label for="">Description</label>
+                        <input type="text" name="description_pc" value="{$elemento->description_pc}">                    
+                    </div>
                      <div>
                         <label for="">GAMA</label>
                         <input type="text" name="name_gama" value="{$elemento->name_gama}" readonly>                    
