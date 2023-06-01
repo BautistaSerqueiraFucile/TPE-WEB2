@@ -39,6 +39,10 @@ switch ( $parameters[ 0 ] ) {
         $user_control->showLogin( URL );
         break; 
 
+    case 'loginOut':
+        header('location: '.URL.'home');
+        break;
+
     case 'editarPc':
         $pc_control->UL_editPc( $parameters[ 1 ],URL);       
     break;
@@ -55,13 +59,22 @@ switch ( $parameters[ 0 ] ) {
         header('location: '.URL.'home');     
     break;
 
-    case 'AltaPc':                
+    case 'altaPc':                
         $pc_control->UL_showAltaPc(URL);            
     break;
 
     case 'createPc':                
          $pc_control->UL_CreatePc($_GET);
          header('location: '.URL.'home');  
+    break;
+
+    case 'altaGama':
+        $gama_control->UL_showAltaGama(URL);
+    break;
+
+    case 'createGama':
+        $gama_control->UL_CreateGama($_GET);
+        header('location: '.URL.'home'); 
     break;
 
 }

@@ -4,8 +4,8 @@
     </div>
         <nav>
             <a href="login">home</a>
-            <a href="AltaPc">Alta PC</a>
-            <a href="AltaGama">Alta Gama</a>
+            <a href="altaPc">Alta PC</a>
+            <a href="altaGama">Alta Gama</a>
             <a href="loginOut">Logout</a>
         </nav>
     </header>

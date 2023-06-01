@@ -38,7 +38,7 @@
                     <div>                        
                         {include file= "../pc_gamasCreate.tpl"}
                     </div>
-                    <input type="submit" value="Editar">            
+                    <input type="submit" value="Crear">            
             </form>            
         </article>        
     </section>
