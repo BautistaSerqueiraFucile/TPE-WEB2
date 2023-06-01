@@ -9,9 +9,9 @@
     <title>Visualizando Gamas</title>
 </head>
 <body>
-    {include file= "UL_header.tpl"}
+    {include file= "../UL_header.tpl"}
     <main class="main">
-    {include file= "aside.tpl"}
+    {include file= "../aside.tpl"}
     <section class="gama">                    
         <article class="pc-gama-edit">
             <form action="modificarGama/{$elemento->id_gama}">                
@@ -28,6 +28,6 @@
         </article>        
     </section>
     </main>
-    {include file= "footer.tpl"}
+    {include file= "../footer.tpl"}
 </body>
 </html>

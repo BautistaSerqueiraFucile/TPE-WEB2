@@ -9,9 +9,9 @@
     <title>Visualizando Gamas</title>
 </head>
 <body>
-    {include file= "header.tpl"}
+    {include file= "../header.tpl"}
     <main class="main">
-    {include file= "aside.tpl"}
+    {include file= "../aside.tpl"}
     <section class="gama">            
         {foreach from=$gama_arreglo item=$elemento}        
         <article>
@@ -27,6 +27,6 @@
         {/foreach}    
     </section>
     </main>
-    {include file= "footer.tpl"}
+    {include file= "../footer.tpl"}
 </body>
 </html>

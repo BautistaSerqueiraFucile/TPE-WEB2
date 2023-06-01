@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    {include file="header.tpl"}
+    {include file="../header.tpl"}
     <main class="main">    
-        {include file= "aside.tpl"}    
+        {include file= "../aside.tpl"}    
         <section class="detail">
             <div class="title">
                 <h1>Detail pc {$title}</h1>
@@ -57,7 +57,7 @@
             </div>
         </section>
     </main>
-    {include file="footer.tpl"}
+    {include file="../footer.tpl"}
 </body>
 
 </html>
