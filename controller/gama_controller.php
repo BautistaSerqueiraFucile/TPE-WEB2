@@ -55,9 +55,16 @@ class gama_controller {
         $this->gama_model->putGama( $elemento, $gama );
 
     }
+    public function UL_deleteGama($elemento){
+        $this->gama_model->deleteGama($elemento);         
+   }
 
-    public function UL_deleteGama( $elemento ) {
-        $this->gama_model->deleteGama( $elemento );
+   public function UL_showAltaGama($URL){
+        $gama = $this->gama_model->getAllGama();  
+        $this->gama_view->UL_viewAltaGama($gama, $URL);
+   }
 
-    }
+   public function UL_CreateGama($query){
+        $this->gama_model->postGama($query);
+   }
 }

@@ -14,7 +14,7 @@
     {include file= "../aside.tpl"}
     <section class="gama">                    
         <article class="pc-gama-edit">
-            <form action="crearPC">                
+            <form action="createPc">                
                     <div>
                         <label for="">Pc Motherboard: </label>
                         <input type="text" name="motherboard">
@@ -38,7 +38,7 @@
                     <div>                        
                         {include file= "../pc_gamasCreate.tpl"}
                     </div>
-                    <input type="submit" value="Editar">            
+                    <input type="submit" value="Crear">            
             </form>            
         </article>        
     </section>

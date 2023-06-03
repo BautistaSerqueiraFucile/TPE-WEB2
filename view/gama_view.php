@@ -34,6 +34,12 @@ function viewAllGama($gamas,$URL) {
         $this->smarty->display('templates/gama_templates/gamas.tpl');
     }
 
+    function UL_viewAltaGama($gamas, $URL){
+        $this->smarty->assign('url', $URL);        
+        $this->smarty->assign('gama_arreglo', $gamas);
+        $this->smarty->display('templates/gama_templates/UL_gama_Create.tpl');
+    }
+
     
 
 

@@ -64,17 +64,33 @@ switch ( $parameters[ 0 ] ) {
     break;
 
     case 'modificarPc':              ;
-    $pc_control->UL_modifiePc( $parameters[ 1 ], $_REQUEST );
-
-    header( 'location: '.URL.'home' );
-
+        $pc_control->UL_modifiePc( $parameters[ 1 ] ,$_REQUEST);  
+        header('location: '.URL.'home');     
     break;
 
+    //CONSULTAR SI, CUANDO ELIMINA UNA GAMA TIENE QUE ELIMINAR NECESARIAMENTE TODAS LAS PC PERTENECIENTE A ESA 
+    //GAMA TAMBIEN
     case 'eliminarPc':                ;
-    $pc_control->UL_deletePc( $parameters[ 1 ] );
+        $pc_control->UL_deletePc( $parameters[ 1 ]);            
+        header('location: '.URL.'home');     
+    break;
 
-    header( 'location: '.URL.'home' );
+    case 'altaPc':                
+        $pc_control->UL_showAltaPc(URL);            
+    break;
 
+    case 'createPc':                
+         $pc_control->UL_CreatePc($_GET);
+         header('location: '.URL.'home');  
+    break;
+
+    case 'altaGama':
+        $gama_control->UL_showAltaGama(URL);
+    break;
+
+    case 'createGama':
+        $gama_control->UL_CreateGama($_GET);
+        header('location: '.URL.'home'); 
     break;
 
 }

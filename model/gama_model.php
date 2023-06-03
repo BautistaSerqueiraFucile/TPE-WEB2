@@ -16,7 +16,7 @@ class gama_model{
 
     function postGama($gama){
         $respuesta = $this->db->prepare( 'INSERT INTO gama (id_gama, name_gama, description_gama) value(?,?,?)' );
-        $respuesta->execute( array( '', $gama[ 'name_gama' ], $gama[ 'description_gama' ] ) );
+        $respuesta->execute( array( '', $gama[ 'name' ], $gama[ 'description_gama' ] ) );
     }
 
     function putGama($elemento, $gama){
