@@ -44,6 +44,14 @@ input,label,select{
     font-weight:600;   
 }
 
+#destacar{
+    margin: auto;
+    border-color: red;
+    background: red;
+    outline: 0 none;
+    border-radius: 15px;
+}
+
 .main{
     display: flex;
     min-height: 100vh;
@@ -96,7 +104,12 @@ input:focus,select, input{
     flex-direction: column;      
 }
 
-.pc-gama-edit{
+.login{
+    justify-content: center;   
+}
+
+
+.pc-gama-edit, .login{
     margin: 75px 0 75px 0;
 }
 
@@ -119,7 +132,7 @@ img{
     width: 200px;
 }
 
-article{      
+article, .login-form{      
     
     margin: 10px;
     border-right: solid 2px #6495ED;    

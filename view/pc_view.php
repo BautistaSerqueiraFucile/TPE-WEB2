@@ -9,8 +9,8 @@ class pc_view{
     }
 
     // funcion para dar vista a todas las pcs
-    function viewAllPc($pc, $gamas, $URL){
-        $this->smarty->assign('url', $URL);
+    function viewAllPc($pc, $gamas){
+        
         $this->smarty->assign('title', 'Home');          
         $this->smarty->assign('pc_arreglo', $pc);
         $this->smarty->assign('gama_arreglo', $gamas);

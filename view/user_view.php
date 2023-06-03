@@ -9,10 +9,17 @@ class user_view{
         $this->smarty = new smarty();
     }
 
-    public function ViewForm($gamas,$url){
-        $this->smarty->assign('url', $url);
-        $this->smarty->assign('title', 'Form');
-        $this->smarty->assign('gama_arreglo', $gamas);
+    public function ViewForm($error = null){        
+        $this->smarty->assign('title', 'Form');        
+        $this->smarty->assign('error', $error);        
         $this->smarty->display('templates/login.tpl');
     }
+
+
+    public function ViewFormCreate($error = null){        
+        $this->smarty->assign('title', 'Form');        
+        $this->smarty->assign('error', $error);        
+        $this->smarty->display('templates/createUser.tpl');
+    }
+
 }

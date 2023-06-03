@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <base href={URL}>
+    <base href={LOGIN}>
     <title>{$title}</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <main class="main">    
     <section class="login">                    
         <div class="login-form">  
-            <form action="verifyUser">
+            <form action="createUser">
                     <div> 
                         <label for="">Nombre de usuario</label>                       
                         <input type="text" name="username" >
@@ -29,9 +29,9 @@
                     <div id="destacar">
                         <label  for="">{$error}</label>
                     </div>
-                    <input type="submit" value="LogIn">                    
+                    <input type="submit" value="Crear Usuario">                    
             </form>            
-            <p>¿No tienes cuenta?<a href="loginCreate"> Crear usuario</a></p>
+            <p>¿Ya tienes cuenta?<a href="login"> Iniciar sesion</a></p>
         </div>        
     </section>
     </main>

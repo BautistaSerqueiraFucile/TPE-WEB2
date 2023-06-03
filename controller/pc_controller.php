@@ -18,11 +18,17 @@ public function __construct(){
 
     }
 
+    private function checkLoggedIn() {
+        session_start();
+        return ( isset( $_SESSION[ 'id_user' ] ) );
+    }
+
+    
     // mostrar todas las pc
-    public function showAllPc($URL){
+    public function showAllPc(){
         $pc = $this->pc_model->GetAllPc();
         $gama = $this->gama_model->getAllGama();                
-        $this->pc_view->viewAllPc( $pc, $gama, $URL);
+        $this->pc_view->viewAllPc( $pc, $gama);
     }
     
     // mostrar en detalle la pc elegida
@@ -40,7 +46,8 @@ public function __construct(){
     }
 
 
-    public function UL_showAllPc($URL){
+    public function UL_showAllPc(){
+        var_dump();
         $pc = $this->pc_model->GetAllPc();
         $gama = $this->gama_model->getAllGama();                
         $this->pc_view->UL_viewAllPc( $pc, $gama, $URL);
