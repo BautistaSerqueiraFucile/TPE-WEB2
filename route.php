@@ -1,8 +1,8 @@
 <?php
 
-define( 'URL', '//'.$_SERVER[ 'SERVER_NAME' ].':'.$_SERVER[ 'SERVER_PORT' ].dirname( $_SERVER[ 'PHP_SELF' ] ).'/' );
-define( 'LOGIN', URL.'login' );
-define( 'HOME', URL.'home' );
+define('URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('LOGIN', URL . 'login');
+define('HOME', URL . 'home');
 
 require_once 'controller/pc_controller.php';
 require_once 'controller/gama_controller.php';
@@ -12,85 +12,106 @@ $pc_control = new pc_controller();
 $gama_control = new gama_controller();
 $user_control = new user_controller();
 
-if ( !empty( $_REQUEST[ 'action' ] ) ) {
-    $action = $_REQUEST[ 'action' ];
+if (!empty($_REQUEST['action'])) {
+    $action = $_REQUEST['action'];
 } else {
     $action = 'home';
 }
 
-$parameters = explode( '/', $action );
+$parameters = explode('/', $action);
 
-switch ( $parameters[ 0 ] ) {
+switch ($parameters[0]) {
+
+    // REFERENCIA DE PCS
+
     case 'home':
-    $pc_control->showAllPc( URL );
-    break;
+        $pc_control->showAllPc();
+        break;
 
     case 'detail':
-    $pc_control->showDetailPc( $parameters[ 1 ], URL );
-    break;
-    case 'gama':
-    $pc_control->UL_viewPcByGama( $parameters[ 1 ], URL );
-    break;
-    case 'gamas':
-    //$gama_control->showAllGama( URL );
-    $gama_control->UL_showAllGama( URL );
-    // probar logueado editar
-    break;
+        $pc_control->showDetailPc($parameters[1]);
+        break;
 
+    case 'gama':
+        $pc_control->showGamaPc($parameters[1]);
+        var_dump($parameters);
+        break;
+
+    case 'editarPc':
+        $pc_control->UL_editPc($parameters[1]);
+        break;
+
+    case 'modificarPc':
+        $pc_control->UL_modifiePc($parameters[1], $_REQUEST);
+        break;
+
+    case 'eliminarPc':
+        $pc_control->UL_deletePc($parameters[1]);
+        break;
+
+    case 'altaPc':
+        $pc_control->UL_showAltaPc();
+        break;
+
+    case 'createPc':
+        $pc_control->UL_CreatePc($_REQUEST);
+        break;
+
+    //REFERENCIA DE GAMAS
+
+    case 'gamas':
+        $gama_control->showAllGama();
+        break;
+
+    case 'altaGama':
+        $gama_control->UL_showAltaGama();
+        break;
+
+    case 'createGama':
+        $gama_control->UL_CreateGama($_REQUEST);
+        break;
+
+    case 'eliminarGama':
+        $gama_control->UL_deleteGama($parameters[1]);
+        break;
+
+    case 'editarGama':
+        $gama_control->UL_editGama($parameters[1]);
+        break;
     
-    //para loguear o crear usuario nuevo
+    case 'modificarGama':
+        $gama_control->UL_modifyGama($parameters[1],$_REQUEST);
+        break;
+
+
+    //PARA LOGUEAR O CREAR USUARIO NUEVO
+
     case 'login':
-    $user_control->showLogin();
-    break;
+        $user_control->showLogin();
+        break;
 
     case 'loginCreate':
         $user_control->showCreateUser();
         break;
 
     case 'verifyUser':
-    $user_control->verifyUser();
-    break;
+        $user_control->verifyUser();
+        break;
 
     case 'createUser':
         $user_control->createUser();
         break;
-     //FIN
-     
-     
 
-    case 'editarPc':
-    $pc_control->UL_editPc( $parameters[ 1 ], URL );
+    case 'loginOut':
+        $user_control->logout();
+        break;
+    //FIN
 
-    break;
 
-    case 'modificarPc':              ;
-        $pc_control->UL_modifiePc( $parameters[ 1 ] ,$_REQUEST);  
-        header('location: '.URL.'home');     
-    break;
 
-    //CONSULTAR SI, CUANDO ELIMINA UNA GAMA TIENE QUE ELIMINAR NECESARIAMENTE TODAS LAS PC PERTENECIENTE A ESA 
-    //GAMA TAMBIEN
-    case 'eliminarPc':                ;
-        $pc_control->UL_deletePc( $parameters[ 1 ]);            
-        header('location: '.URL.'home');     
-    break;
 
-    case 'altaPc':                
-        $pc_control->UL_showAltaPc(URL);            
-    break;
 
-    case 'createPc':                
-         $pc_control->UL_CreatePc($_GET);
-         header('location: '.URL.'home');  
-    break;
 
-    case 'altaGama':
-        $gama_control->UL_showAltaGama(URL);
-    break;
 
-    case 'createGama':
-        $gama_control->UL_CreateGama($_GET);
-        header('location: '.URL.'home'); 
-    break;
 
 }

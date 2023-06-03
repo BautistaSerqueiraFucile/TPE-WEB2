@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2023 a las 20:46:57
+-- Tiempo de generación: 03-06-2023 a las 03:49:25
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -38,8 +38,7 @@ CREATE TABLE `gama` (
 --
 
 INSERT INTO `gama` (`id_gama`, `name_gama`, `description_gama`) VALUES
-(8, 'Gama alta', 'Pc de alto rendimiento, la mejor calidad'),
-(9, 'Gama media', 'Pc con un buen rendimiento'),
+(9, 'Testeo 12', 'anda porfa'),
 (10, 'Gama baja', 'Pc con poco rendimiento para usos específicos y sencillos');
 
 -- --------------------------------------------------------
@@ -63,9 +62,9 @@ CREATE TABLE `pc` (
 --
 
 INSERT INTO `pc` (`id_pc`, `motherboard`, `processor`, `video`, `description_pc`, `RAM`, `id_gama`) VALUES
-(25, 'ab-250', 'Intel i7', 'Nvidia 9310', 'Pc con muy buen diseño y rendimiento', '16 GB', 8),
-(26, 'ac-201', 'Ryzen 2103', 'Rtx 3020', 'Pc gama media con rendimiento moderado', '8 GB', 9),
-(27, 'pz-910', 'Intel i3 2000', 'Intel graphics', 'Pc gama baja para usos específicos y poco exigentes ', '4 GB', 10);
+(28, 'porfa', 'anda', 'o ', 'lastimo', 'me', 10),
+(31, 'asd', 'asd', '123', '6189', '61', 10),
+(32, 'pz-2500', 'Intel 2000', 'Nvidia 600', 'descriptiooooon', '287 GB', 9);
 
 -- --------------------------------------------------------
 
@@ -75,10 +74,16 @@ INSERT INTO `pc` (`id_pc`, `motherboard`, `processor`, `video`, `description_pc`
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `password` varchar(40) NOT NULL
+  `username` varchar(40) NOT NULL,
+  `user_password` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id_user`, `username`, `user_password`) VALUES
+(3, 'jorge', '$2y$10$E6DGUi.9f5Qgf82p8eoEvuuI4s6QyyYGr8nfs7Y45YEXjjugTEBGS');
 
 --
 -- Índices para tablas volcadas
@@ -111,19 +116,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `gama`
 --
 ALTER TABLE `gama`
-  MODIFY `id_gama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_gama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -133,7 +138,7 @@ ALTER TABLE `user`
 -- Filtros para la tabla `pc`
 --
 ALTER TABLE `pc`
-  ADD CONSTRAINT `id_gama` FOREIGN KEY (`id_gama`) REFERENCES `gama` (`id_gama`);
+  ADD CONSTRAINT `id_gama` FOREIGN KEY (`id_gama`) REFERENCES `gama` (`id_gama`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

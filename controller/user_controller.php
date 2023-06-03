@@ -40,7 +40,6 @@ class user_controller{
             
             header('Location: home');
         } else {
-            echo "entre a usuario incorrecto";
             $this->user_view->ViewForm("LOGIN INCORRECTO");
         }
     }
@@ -64,6 +63,6 @@ class user_controller{
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: ' . LOGIN);
+        header('Location: ' . HOME);
     }
 }
