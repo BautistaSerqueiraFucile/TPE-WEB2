@@ -16,7 +16,7 @@ class user_model {
     }
 
     function postUser( $hash ) {
-        $respuesta = $this->db->prepare('INSERT INTO user (username, user_password) VALUE (?,?,?)');
+        $respuesta = $this->db->prepare('INSERT INTO user (username, user_password) VALUE (?,?)');
         $respuesta->execute(array($_REQUEST['username'], $hash));        
     }
 
