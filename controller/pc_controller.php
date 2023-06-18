@@ -5,14 +5,16 @@ require_once "model/pc_model.php";
 require_once "view/pc_view.php";
 require_once 'view/auxiliar_view.php';
 
-class pc_controller{
+class pc_controller
+{
 
     private $gama_model;
     private $pc_model;
     private $pc_view;
     private $auxiliar_view;
 
-public function __construct(){
+    public function __construct()
+    {
 
         $this->gama_model= new gama_model();
         $this->pc_model= new pc_model();
@@ -22,15 +24,17 @@ public function __construct(){
     }
 
     // checkeo de logeo
-    private function checkLoggedIn() {
+    private function checkLoggedIn()
+    {
         session_start();
-        return ( isset( $_SESSION[ 'id_user' ] ) );
+        return (isset($_SESSION['id_user']));
     }
 
     // VISTAS --
-    
+
     // mostrar todas las pc y si esta logueado vista administrador
-    public function showAllPc(){
+    public function showAllPc()
+    {
         $pc = $this->pc_model->GetAllPc();
         $gamas = $this->gama_model->getAllGama();  
         if ($pc) {
@@ -52,9 +56,10 @@ public function __construct(){
         
         
     }
-    
+
     // mostrar en detalle la pc elegida
-    public function showDetailPc($id){
+    public function showDetailPc($id)
+    {
         $pc = $this->pc_model->GetPcById($id);
         $gamas = $this->gama_model->getAllGama(); 
         if (!empty($pc)) {
@@ -70,7 +75,7 @@ public function __construct(){
         }      
         
     }
-    
+
     // mostrar las pc por gama y si esta logueado vista administrador
     public function showGamaPc($gama){
         $pc = $this->pc_model->GetPcByGama($gama);
@@ -96,7 +101,8 @@ public function __construct(){
     }
 
     // editar pc si esta logueado, si no redirigir a login
-    public function UL_editPc($id_pc){
+    public function UL_editPc($id_pc)
+    {
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama(); 
             $elemento = $this->pc_model->searchPc($id_pc);  
@@ -112,8 +118,9 @@ public function __construct(){
         }
     }
 
-     // agregar pc si esta logueado, si no redirigir a login
-     public function UL_showAltaPc(){
+    // agregar pc si esta logueado, si no redirigir a login
+    public function UL_showAltaPc()
+    {
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();  
             $this->pc_view->UL_viewAltaPc($gamas);
@@ -135,7 +142,7 @@ public function __construct(){
             
         } else {
             header('location:' . LOGIN);
-        }        
+        }
     }
 
     public function UL_confirmDeletePc($elemento)
@@ -163,9 +170,9 @@ public function __construct(){
         } else {
             header('location:' . LOGIN);
         }
-        
-   }
- 
+
+    }
+
     // agregar pc si esta logueado, si no redirigir a login
     public function UL_CreatePc($query){
         $gamas = $this->gama_model->getAllGama();  
@@ -178,5 +185,5 @@ public function __construct(){
             header('location:' . LOGIN);
         }
     }
-   
+
 }
