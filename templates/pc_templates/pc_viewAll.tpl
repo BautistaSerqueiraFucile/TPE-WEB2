@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{$url}css/style.css">
     <base href="{$url}">
     <title>{$title}</title>
 </head>
@@ -17,13 +17,12 @@
         <article>
             <a href="detail/{$elemento->id_pc}">
                 <ul>
-                <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/JsxkDHYTeoqs0meqg4G2/imagen" alt="PC ARMADA">
-                <li>ID PC: {$elemento->id_pc}</li>
-                    <li>Motherboard: {$elemento->motherboard}</li>
-                    <li>Processor: {$elemento->processor}</li>
-                    <li>Video Card: {$elemento->video}</li>
-                    <li>RAM: {$elemento->RAM}</li>
-                    <li>Gama: {$elemento->name_gama}</li>
+                    <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/JsxkDHYTeoqs0meqg4G2/imagen" alt="PC ARMADA">                
+                    <li><span class="atributo">Motherboard:</span> {$elemento->motherboard}</li>
+                    <li><span class="atributo">Processor:</span> {$elemento->processor}</li>
+                    <li><span class="atributo">Video card:</span> {$elemento->video}</li>
+                    <li><span class="atributo">RAM:</span> {$elemento->RAM}</li>
+                    <li><span class="atributo">Gama:</span> {$elemento->name_gama}</li>
                 </ul>
             </a>
         </article>

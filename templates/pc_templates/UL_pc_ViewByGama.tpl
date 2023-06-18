@@ -17,8 +17,7 @@
         <article>
             <a href="detail/{$elemento->id_pc}">
                 <ul>
-                <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/JsxkDHYTeoqs0meqg4G2/imagen" alt="PC ARMADA">
-                <li>ID PC: {$elemento->id_pc}</li>
+                <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/JsxkDHYTeoqs0meqg4G2/imagen" alt="PC ARMADA">                
                     <li>Motherboard: {$elemento->motherboard}</li>
                     <li>Processor: {$elemento->processor}</li>
                     <li>Video Card: {$elemento->video}</li>
@@ -26,8 +25,8 @@
                     <li>Gama: {$elemento->name_gama}</li>
                 </ul>
             </a>              
-            <a href="editarPc/{$elemento->id_pc}">Edit</a>
-            <a href="eliminarPc/{$elemento->id_pc}">Delete</a>
+            <a href="editarPc/{$elemento->id_pc}" id="editar-eliminar">Edit</a>
+            <a href="confirmarEliminarPc/{$elemento->id_pc}" id="editar-eliminar">Delete</a>
         </article>
         {/foreach}    
     </section>

@@ -30,7 +30,6 @@ function viewAllGama($gamas) {
         $this->smarty->assign('elemento', $elemento);  
         $this->smarty->assign('gama_arreglo', $gamas); 
         $this->smarty->display('templates/gama_templates/UL_gama_edit.tpl');
-        $this->smarty->display('templates/gamas.tpl');
     }
 
     function UL_viewAltaGama($gamas){

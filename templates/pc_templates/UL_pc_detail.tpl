@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    {include file="../header.tpl"}
+    {include file="../UL_header.tpl"}
     <main class="main">    
         {include file= "../aside.tpl"}    
         <section class="detail">            
@@ -46,7 +46,10 @@
                    
                     <p>{$pc->description_gama}</p>                
             </div>
-           
+            <div class="botones-detail">
+                <a href="editarPc/{$pc->id_pc}" id="editar-eliminar">Edit</a>
+                <a href="eliminarPc/{$pc->id_pc}" id="editar-eliminar">Delete</a>
+            </div>
         </section>
     </main>
     {include file="../footer.tpl"}

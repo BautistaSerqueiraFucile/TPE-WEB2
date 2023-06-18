@@ -16,17 +16,17 @@ class gama_model{
 
     function postGama($gama){
         $respuesta = $this->db->prepare( 'INSERT INTO gama (id_gama, name_gama, description_gama) value(?,?,?)' );
-        $respuesta->execute( array( '', $gama[ 'name' ], $gama[ 'description_gama' ] ) );
+        return $respuesta->execute( array( '', $gama[ 'name' ], $gama[ 'description_gama' ] ) );
     }
 
     function putGama($elemento, $gama){
         $respuesta = $this->db->prepare( 'UPDATE gama SET name_gama=?, description_gama=? WHERE (id_gama=?)');
-        $respuesta->execute(array($gama[ 'name_gama' ],$gama[ 'description_gama' ], $elemento));
+        return $respuesta->execute(array($gama[ 'name_gama' ],$gama[ 'description_gama' ], $elemento));
     }
 
     function deleteGama($gama){
         $respuesta = $this->db->prepare( 'DELETE FROM gama WHERE id_gama=?' );
-        $respuesta->execute( array( $gama) );
+        return $respuesta->execute( array( $gama) );
     }
 
     function searchGama($gama) {

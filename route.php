@@ -3,6 +3,7 @@
 define('URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 define('LOGIN', URL . 'login');
 define('HOME', URL . 'home');
+define('GAMA', URL . 'gamas');
 
 require_once 'controller/pc_controller.php';
 require_once 'controller/gama_controller.php';
@@ -34,7 +35,6 @@ switch ($parameters[0]) {
 
     case 'gama':
         $pc_control->showGamaPc($parameters[1]);
-        var_dump($parameters);
         break;
 
     case 'editarPc':
@@ -44,6 +44,10 @@ switch ($parameters[0]) {
     case 'modificarPc':
         $pc_control->UL_modifiePc($parameters[1], $_REQUEST);
         break;
+
+        case 'confirmarEliminarPc':
+            $pc_control->UL_confirmDeletePc($parameters[1]);
+            break;
 
     case 'eliminarPc':
         $pc_control->UL_deletePc($parameters[1]);
@@ -71,6 +75,10 @@ switch ($parameters[0]) {
         $gama_control->UL_CreateGama($_REQUEST);
         break;
 
+        case 'confirmarEliminarGama':
+            $gama_control->UL_confirmDeleteGama($parameters[1]);
+            break;
+            
     case 'eliminarGama':
         $gama_control->UL_deleteGama($parameters[1]);
         break;

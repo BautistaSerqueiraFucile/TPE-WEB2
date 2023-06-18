@@ -2,14 +2,17 @@
 
 require_once('view/user_view.php');
 require_once('model/user_model.php');
+require_once 'view/auxiliar_view.php';
 
 class user_controller{
     private $user_view;
     private $user_model;
+    private $auxiliar_view;
 
     function __construct(){
         $this->user_view = new user_view();
         $this->user_model = new user_model();
+        $this->auxiliar_view = new auxiliar_view();
     }
 
     function showLogin(){
@@ -40,7 +43,7 @@ class user_controller{
             
             header('Location: home');
         } else {
-            $this->user_view->ViewForm("LOGIN INCORRECTO");
+            $this->auxiliar_view->auxiliar_user("Usuario no coincide/contraseña incorrecta"); 
         }
     }
 
@@ -50,11 +53,14 @@ class user_controller{
         $password = $_REQUEST['password'];
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        // encontró un user con el username que mandó, y tiene la misma contraseña
+        
         if (!empty($username) && !empty($hash)) {
-            $this->user_model->postUser($hash);
-
-            header('Location: login');
+            if ($this->user_model->postUser($hash)) {
+                $this->auxiliar_view->auxiliar_user("Se creo usuario correctamente"); 
+            }
+            else {
+                $this->auxiliar_view->auxiliar_user("Error en la creacion de usuario"); 
+            }
         } else {
             $this->user_view->ViewForm("complete todos los campos");
         }

@@ -1,8 +1,13 @@
 body{
     margin: 0;
+    background-image: url(../imagenes/shubham-dhage-NsPqV-WsZYY-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
-
+h1,h2,input,select,option,label,a,li, .login-form p{
+    color: rgb(187, 192, 197);
+}
 header{
     display: flex;
     justify-content:space-between;
@@ -11,6 +16,11 @@ header{
     height: 75px;
     position: sticky;
     top: 0;
+}
+
+header a{
+    color: rgb(231, 233, 235);
+
 }
 header div{
     margin-left: 75px;
@@ -27,11 +37,10 @@ nav a{
 
 nav a:hover{
     padding: 20px;
-    background: blue;    
+    background: rgb(85, 105, 126);  
 }
 
-a{
-    color: black;
+a{    
     text-decoration: none;
     font-size: 25px;
     font-weight: 400;
@@ -40,16 +49,8 @@ a{
 
 input,label,select{    
     
-    font-size: 15px;
+    font-size: 18px;
     font-weight:600;   
-}
-
-#destacar{
-    margin: auto;
-    border-color: red;
-    background: red;
-    outline: 0 none;
-    border-radius: 15px;
 }
 
 .main{
@@ -58,7 +59,7 @@ input,label,select{
 }
 
 aside{    
-    margin: 10px;
+    margin: 75px 30px;
     padding: 10px;
     border-top: solid 2px #6495ED;    
     border-bottom: solid 2px #6495ED;    
@@ -70,6 +71,15 @@ aside{
 
 aside ul{
     list-style:outside;
+}
+aside li{
+    border-radius: 15px;
+    padding: 2px;
+}
+aside a{
+    list-style: none;
+   
+    
 }
 
 section{
@@ -99,11 +109,43 @@ input:focus,select, input{
     flex-wrap: wrap;
 }
 
+.seccionPc article{        
+    margin: 25px 15px;
+}
+
 .gama{ 
     align-items: center;
     flex-direction: column;      
 }
 
+.main-mensaje{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    margin: auto;
+}
+
+.mensaje{
+    margin-top: 200px;
+}
+
+.botones{
+    display: flex;
+}
+
+.botones a, #editar-eliminar{
+
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 3px  rgb(187, 192, 197);
+    margin: 2px;
+}
+
+.botones a:hover, #editar-eliminar:hover, aside li:hover{
+    background: rgb(85, 105, 126);
+}
 .login{
     justify-content: center;   
 }
@@ -121,20 +163,25 @@ input:focus,select, input{
     align-items: flex-start;
 }
 
+
 .gama article{
-    width: 70%;
+    width: 60%;
+    margin: 50px;
 }
 
 .gama article form{
     width: 100%;
 }
 img{
-    width: 200px;
+    width: 250px;
+    
 }
 
-article, .login-form{      
+.login-form{
+    margin: 250px 0 200px 0;
+}
+article, .login-form{         
     
-    margin: 10px;
     border-right: solid 2px #6495ED;    
     border-radius: 20px;
     height:fit-content;
@@ -142,7 +189,7 @@ article, .login-form{
 }
 
 .btn_editar-eliminar{
-    margin: 10px;
+    padding: 10px 0;
 }
 
 .btn_editar-eliminar a{
@@ -150,39 +197,50 @@ article, .login-form{
 }
 
 ul{
-    list-style: none;   
+    list-style: none; 
+    padding: 0;
 }
 
 /* fin estilo pagina Home */
 
 /* Inicio estilo pagina detail  */
 
+
+
 .detail{
     display: flex;
-    flex-direction: column;
-    width: 75%;
+    flex-direction: column;    
+    margin: 250px;    
     
 }
 
-.title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.botones-detail{
+    margin: 25px auto;
 }
 
-#container{
+.container{
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
-    
+    align-items: center;    
 }
+
+
+p, table, #loguear-crear, .atributo{
+    color: #6495ED;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h1, h2{
+    font-size: 2.5rem;    
+}
+
 
 table, tr, td{
-    border: solid 2px black;
+    
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
 }
 
 table{
@@ -217,7 +275,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blue;
+    background: #6495ED;
     height: 75px;
     bottom: 0;
 }
