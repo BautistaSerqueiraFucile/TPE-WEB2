@@ -36,13 +36,13 @@ class pc_model{
 
     //-----------------------------------------------------------------------------
     function postPc($pc){
-        $respuesta = $this->db->prepare( 'INSERT INTO pc (id_pc, motherboard, processor, video, description_pc, RAM, id_gama) value(?,?,?,?,?,?,?)' );
-        return $respuesta->execute( array( '', $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'description_pc' ],$pc[ 'RAM' ],$pc[ 'gama' ] ) );
+        $respuesta = $this->db->prepare( 'INSERT INTO pc (id_pc, motherboard, processor, disco, RAM, video, description_pc, id_gama) value(?,?,?,?,?,?,?,?)' );
+        return $respuesta->execute( array( '', $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'disco' ],$pc[ 'RAM' ],$pc[ 'video' ],$pc[ 'description_pc' ],$pc[ 'gama' ] ) );
     }
 
     function putPc($id_pc,$pc){        
-        $respuesta = $this->db->prepare( 'UPDATE pc SET motherboard=?, processor=?, video=?, description_pc=?, RAM=?, id_gama=? WHERE (id_pc= ?)' );
-        return $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'video' ],$pc[ 'description_pc' ], $pc[ 'RAM' ], $pc[ 'gama' ],$id_pc));
+        $respuesta = $this->db->prepare( 'UPDATE pc SET motherboard=?, processor=?,disco=?, RAM=?, video=?, description_pc=?, id_gama=? WHERE (id_pc= ?)' );
+        return $respuesta->execute(array( $pc[ 'motherboard' ], $pc[ 'processor' ],$pc[ 'disco' ], $pc[ 'RAM' ], $pc[ 'video' ],$pc[ 'description_pc' ], $pc[ 'gama' ],$id_pc));
     }
 
     function deletePc($id_pc){

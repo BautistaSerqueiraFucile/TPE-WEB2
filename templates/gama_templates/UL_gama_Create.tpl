@@ -17,7 +17,7 @@
             <form action="createGama">                
                     <div>
                         <label for="">Name: </label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </div>
                     <div>
                         <label for="">Description: </label>
