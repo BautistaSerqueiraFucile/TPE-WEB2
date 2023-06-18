@@ -20,8 +20,9 @@
                 <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/JsxkDHYTeoqs0meqg4G2/imagen" alt="PC ARMADA">                
                     <li>Motherboard: {$elemento->motherboard}</li>
                     <li>Processor: {$elemento->processor}</li>
-                    <li>Video Card: {$elemento->video}</li>
                     <li>RAM: {$elemento->RAM}</li>
+                    <li>Disco: {$elemento->disco}</li>
+                    <li>Video Card: {$elemento->video}</li>                    
                     <li>Gama: {$elemento->name_gama}</li>
                 </ul>
             </a>              

@@ -17,20 +17,25 @@
             <form action="createPc">                
                     <div>
                         <label for="">Pc Motherboard: </label>
-                        <input type="text" name="motherboard">
+                        <input type="text" name="motherboard" required>
                     </div>
                     <div>
                         <label for="">Processor: </label>
-                        <input type="text" name="processor">
+                        <input type="text" name="processor" required>
                     </div>
+                    <div>
+                        <label for="">RAM: </label required>
+                        <input type="text" name="RAM">                    
+                    </div>
+                    <div>
+                        <label for="">Disco: </label>
+                        <input type="text" name="disco">
+                    </div>    
                     <div>
                         <label for="">Video: </label>
                         <input type="text" name="video">
                     </div>
-                    <div>
-                        <label for="">RAM: </label>
-                        <input type="text" name="RAM">                    
-                    </div>
+                                    
                     <div>
                         <label for="">Description: </label>
                         <input type="text" name="description_pc">      

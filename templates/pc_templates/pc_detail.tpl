@@ -27,26 +27,35 @@
                                 <td>Processor</td>
                                 <td>{$pc->processor}</td>
                             </tr>
-                            <tr>
-                                <td>Video card</td>
-                                <td>{$pc->video}</td>
-                            </tr>
-                            <tr>
+                              <tr>
                                 <td>RAM</td>
                                 <td>{$pc->RAM}</td>
                             </tr>
+                            <tr>
+                                <td>Disco</td>
+                                <td>{$pc->disco}</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>Video card</td>
+                                <td>{$pc->video}</td>
+                            </tr>       
+                            <tr>
+                                <td>Gama</td>
+                                <td>{$pc->name_gama}</td>
+                            </tr>                            
+                            
                         </tbody>
                     </table>              
                                          
                     <h2>Pc Description</h2>
                    
-                    <p>{$pc->description_pc}</p>                              
-                                
-                        <h2>Gama Description</h2>
+                    <p>{$pc->description_pc}</p>  
+
+                    <h2>Gama Description</h2>
                    
-                    <p>{$pc->description_gama}</p>                
-            </div>
-           
+                    <p>{$pc->description_gama}</p>      
+            </div>           
         </section>
     </main>
     {include file="../footer.tpl"}

@@ -24,13 +24,17 @@
                         <input type="text" name="processor" value="{$elemento->processor}">
                     </div>
                     <div>
-                        <label for="">Video: </label>
-                        <input type="text" name="video" value="{$elemento->video}">
-                    </div>
-                    <div>
                         <label for="">RAM</label>
                         <input type="text" name="RAM" value="{$elemento->RAM}">                    
                     </div>
+                    <div>
+                        <label for="">Disco</label>
+                        <input type="text" name="disco" value="{$elemento->disco}">                    
+                    </div>
+                    <div>
+                        <label for="">Video: </label>
+                        <input type="text" name="video" value="{$elemento->video}">
+                    </div>                    
                     <div>
                         <label for="">Description</label>
                         <input type="text" name="description_pc" value="{$elemento->description_pc}">                    

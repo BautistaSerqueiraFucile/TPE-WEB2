@@ -5,8 +5,12 @@ body{
     background-size:cover;
 }
 
-h1,h2,input,select,option,label,a,li, .login-form p{
-    color: rgb(187, 192, 197);
+h1,h2,label,a,li, .login-form p,header a{
+    color: rgb(231, 233, 235);
+}
+
+select,option, input{
+    color:  #6495ED;
 }
 header{
     display: flex;
@@ -18,10 +22,7 @@ header{
     top: 0;
 }
 
-header a{
-    color: rgb(231, 233, 235);
 
-}
 header div{
     margin-left: 75px;
 }
@@ -100,7 +101,7 @@ form div{
 }
 
 input:focus,select, input{
-    border-color:blue;    
+    border-color:#6495ED;    
     outline: 0 none;
     padding: 10px;
     border-radius: 15px;
