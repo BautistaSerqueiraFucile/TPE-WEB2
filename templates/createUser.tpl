@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,31 @@
     <base href={$url}>
     <title>{$title}</title>
 </head>
+
 <body>
-  {include file= "header.tpl"}
-    <main class="main">    
-    <section class="login">                    
-        <div class="login-form">  
-            <form action="createUser">
-                    <div> 
-                        <label for="">Nombre de usuario</label >                       
+    {include file= "header.tpl"}
+    <main class="main">
+        <section class="login">
+            <div class="login-form">
+                <form action="createUser">
+                    <div>
+                        <label for="">Nombre de usuario</label>
                         <input type="text" name="username" required>
                     </div>
-                    <div>                        
-                        <label for="">Password</label>                       
-                        <input type="password" name="password"pleaceholder="Password" required>                    
+                    <div>
+                        <label for="">Password</label>
+                        <input type="password" name="password" pleaceholder="Password" required>
                     </div>
                     <div id="destacar">
-                        <label  for="">{$error}</label>
+                        <label for="">{$error}</label>
                     </div>
-                    <input type="submit" value="Crear Usuario">                    
-            </form>            
-            <p>¿Ya tienes cuenta?<a href="login" id="loguear-crear"> Iniciar sesion</a></p>
-        </div>        
-    </section>
+                    <input type="submit" value="Crear Usuario">
+                </form>
+                <p>¿Ya tienes cuenta?<a href="login" id="loguear-crear"> Iniciar sesion</a></p>
+            </div>
+        </section>
     </main>
     {include file= "footer.tpl"}
 </body>
+
 </html>

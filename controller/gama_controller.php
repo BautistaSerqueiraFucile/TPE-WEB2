@@ -20,10 +20,11 @@ class gama_controller
         $this->gama_model = new gama_model();
 
         $this->gama_view = new gama_view();
-        
+
         $this->auxiliar_view = new auxiliar_view();
     }
 
+    // Checko si el usuario esta logueado
     private function checkLoggedIn()
     {
         session_start();
@@ -32,6 +33,7 @@ class gama_controller
 
     //VISTA --
 
+    // Muestro todas las gamas
     public function showAllGama()
     {
         $gamas = $this->gama_model->getAllGama();
@@ -41,32 +43,31 @@ class gama_controller
             } else {
                 $this->gama_view->viewAllGama($gamas);
             }
+        } else {
+            if ($this->checkLoggedIn()) {
+                $this->auxiliar_view->UL_pc_gama_empty("Sin elementos", $gamas);
+            } else {
+                $this->auxiliar_view->pc_gama_empty("Sin elementos", $gamas);
+            }
         }
-        else {
-         if ($this->checkLoggedIn()) {
-            $this->auxiliar_view->UL_pc_gama_empty("Sin elementos",$gamas);
-         }
-         else {
-            $this->auxiliar_view->pc_gama_empty("Sin elementos",$gamas);
-         }            
-        }    
     }
 
+    // Muestro la edicion
     public function UL_editGama($id_gama)
     {
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
             $elemento = $this->gama_model->searchGama($id_gama);
-            if ($elemento) {                
-                $this->gama_view->UL_viewEditGama($gamas, $elemento);    
+            if ($elemento) {
+                $this->gama_view->UL_viewEditGama($gamas, $elemento);
+            } else {
+                $this->auxiliar_view->mensaje("No se encontro elemento", $gamas, "gamas");
             }
-            else{
-                $this->auxiliar_view->mensaje("No se encontro elemento",$gamas,"gamas");
-            }            
         } else
             header('location: ' . LOGIN);
     }
 
+    // Muestro la interfaz de alta de gama
     public function UL_showAltaGama()
     {
         if ($this->checkLoggedIn()) {
@@ -80,65 +81,63 @@ class gama_controller
 
     // ABM --
 
+    // Modifica la gama seleccionada
     public function UL_modifyGama($elemento, $gama)
     {
-        
+
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
             if ($this->gama_model->putGama($elemento, $gama)) {
-                $this->auxiliar_view->mensaje("Se modifico una gama correctamente",$gamas,"gamas");            
+                $this->auxiliar_view->mensaje("Se modifico una gama correctamente", $gamas, "gamas");
+            } else {
+                $this->auxiliar_view->mensaje("Ocurrio un error al modificar GAMA", $gamas, "gamas");
             }
-            else {
-                $this->auxiliar_view->mensaje("Ocurrio un error al modificar GAMA",$gamas,"gamas");            
-            }
-            
+
         } else
             header('location: ' . LOGIN);
     }
 
+    // Pantalla de confirmacion para el borrado de una gama
     public function UL_confirmDeleteGama($elemento)
     {
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
-            $this->auxiliar_view->confirmacion("Confirmar para eliminar la gama y sus elementos", $gamas, "eliminarGama/".$elemento, "gamas");
+            $this->auxiliar_view->confirmacion("Confirmar para eliminar la gama y sus elementos", $gamas, "eliminarGama/" . $elemento, "gamas");
         } else
             header('location: ' . LOGIN);
     }
 
-
+    // Borrado de una gama
     public function UL_deleteGama($elemento)
     {
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
             if ($this->gama_model->deleteGama($elemento)) {
-                $this->auxiliar_view->mensaje("Se elimino correctamente",$gamas,"gamas");            
+                $this->auxiliar_view->mensaje("Se elimino correctamente", $gamas, "gamas");
+            } else {
+                $this->auxiliar_view->mensaje("Ocurrio un error al eliminar GAMA", $gamas, "gamas");
             }
-            else{
-                $this->auxiliar_view->mensaje("Ocurrio un error al eliminar GAMA",$gamas,"gamas");            
-            }
-            
+
         } else
             header('location: ' . LOGIN);
     }
 
-   
+    // Creado de una gama
     public function UL_CreateGama($query)
-    {        
+    {
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
             $existe = $this->gama_model->searchGamaByName($query['name']);
             if (!$existe) {
                 if ($this->gama_model->postGama($query)) {
-                    $this->auxiliar_view->mensaje("Se Agrego una gama nueva correctamente",$gamas,"gamas");
+                    $this->auxiliar_view->mensaje("Se Agrego una gama nueva correctamente", $gamas, "gamas");
+                } else {
+                    $this->auxiliar_view->mensaje("Ocurrio un error al crear una nueva gama GAMA", $gamas, "gamas");
                 }
-                else {
-                    $this->auxiliar_view->mensaje("Ocurrio un error al crear una nueva gama GAMA",$gamas,"gamas");
-                }    
+            } else {
+                $this->auxiliar_view->mensaje("La GAMA ya esxiste, NO se puede crear", $gamas, "gamas");
             }
-            else {
-                $this->auxiliar_view->mensaje("La GAMA ya esxiste, NO se puede crear",$gamas,"gamas");
-            } 
-            
+
         } else
             header('location: ' . LOGIN);
     }

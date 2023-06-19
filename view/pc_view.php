@@ -10,17 +10,15 @@ class pc_view{
 
     // funcion para dar vista a todas las pcs
     function viewAllPc($pc, $gamas){
-        $this->smarty->assign('url', URL);
-        $this->smarty->assign('title', 'Home');          
+        $this->smarty->assign('url', URL);         
         $this->smarty->assign('pc_arreglo', $pc);
         $this->smarty->assign('gama_arreglo', $gamas);
         $this->smarty->display('templates/pc_templates/pc_viewAll.tpl');
     }
 
     // funcion para dar vista a la pc elegida en detalle
-    function ViewDetailPc($id, $pc, $gamas){
+    function ViewDetailPc($pc, $gamas){
         $this->smarty->assign('url', URL);
-        $this->smarty->assign('title', $id);
         $this->smarty->assign('pc', $pc);
         $this->smarty->assign('gama_arreglo', $gamas);
         $this->smarty->display('templates/pc_templates/pc_detail.tpl');
@@ -34,17 +32,15 @@ class pc_view{
         $this->smarty->display('templates/pc_templates/pc_viewByGama.tpl');
     }
 
-    function UL_ViewDetailPc($id, $pc, $gamas){
+    function UL_ViewDetailPc($pc, $gamas){
         $this->smarty->assign('url', URL);
-        $this->smarty->assign('title', $id);
         $this->smarty->assign('pc', $pc);
         $this->smarty->assign('gama_arreglo', $gamas);
         $this->smarty->display('templates/pc_templates/UL_pc_detail.tpl');
     }
 
     function UL_viewAllPc($pc, $gamas){
-        $this->smarty->assign('url', URL);
-        $this->smarty->assign('title', 'Home');          
+        $this->smarty->assign('url', URL);         
         $this->smarty->assign('pc_arreglo', $pc);
         $this->smarty->assign('gama_arreglo', $gamas);
         $this->smarty->display('templates/pc_templates/UL_pc_viewAll.tpl');

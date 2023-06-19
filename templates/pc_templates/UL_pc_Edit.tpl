@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,50 +9,52 @@
     <base href={$url}>
     <title>Visualizando PC-Edit</title>
 </head>
+
 <body>
     {include file= "../UL_header.tpl"}
     <main class="main">
-    {include file= "../aside.tpl"}
-    <section class="gama">                    
-        <article class="pc-gama-edit">
-            <form action="modificarPc/{$elemento->id_pc}">                
+        {include file= "../aside.tpl"}
+        <section class="gama">
+            <article class="pc-gama-edit">
+                <form action="modificarPc/{$elemento->id_pc}">
                     <div>
                         <label for="">Pc Motherboard: </label>
-                        <input type="text" name="motherboard" value="{$elemento->motherboard}">
+                        <input type="text" name="motherboard" value="{$elemento->motherboard}" required>
                     </div>
                     <div>
                         <label for="">Processor: </label>
-                        <input type="text" name="processor" value="{$elemento->processor}">
+                        <input type="text" name="processor" value="{$elemento->processor}" required>
                     </div>
                     <div>
                         <label for="">RAM</label>
-                        <input type="text" name="RAM" value="{$elemento->RAM}">                    
+                        <input type="text" name="RAM" value="{$elemento->RAM}" required>
                     </div>
                     <div>
                         <label for="">Disco</label>
-                        <input type="text" name="disco" value="{$elemento->disco}">                    
+                        <input type="text" name="disco" value="{$elemento->disco}" required>
                     </div>
                     <div>
                         <label for="">Video: </label>
                         <input type="text" name="video" value="{$elemento->video}">
-                    </div>                    
+                    </div>
                     <div>
                         <label for="">Description</label>
-                        <input type="text" name="description_pc" value="{$elemento->description_pc}">                    
+                        <input type="text" name="description_pc" value="{$elemento->description_pc}">
                     </div>
-                     <div>
+                    <div>
                         <label for="">GAMA</label>
-                        <input type="text" name="name_gama" value="{$elemento->name_gama}" readonly>                    
+                        <input type="text" name="name_gama" value="{$elemento->name_gama}" readonly>
                     </div>
-                    <div>                        
+                    <div>
                         {include file= "../pc_gamasEdit.tpl"}
                     </div>
-                    <input type="submit" value="Editar">            
-            
-            </form>            
-        </article>        
-    </section>
+                    <input type="submit" value="Editar">
+
+                </form>
+            </article>
+        </section>
     </main>
     {include file= "../footer.tpl"}
 </body>
+
 </html>
