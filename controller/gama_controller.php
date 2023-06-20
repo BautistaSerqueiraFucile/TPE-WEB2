@@ -160,7 +160,6 @@ class gama_controller
             } else {
                 $this->auxiliar_view->mensaje('La GAMA ya existe, NO se puede crear', $gamas, 'gamas');
             }
-
         } else
             header('location: ' . LOGIN);
     }
