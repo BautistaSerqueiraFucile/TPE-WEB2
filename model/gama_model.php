@@ -22,10 +22,10 @@ class gama_model
         return $respuesta->execute(array('', $gama['name'], $gama['description_gama']));
     }
 
-    function putGama($gama)
+    function putGama($gama, $elemento)
     {
         $respuesta = $this->db->prepare('UPDATE gama SET name_gama=?, description_gama=? WHERE (id_gama=?)');
-        return $respuesta->execute(array($gama['name_gama'], $gama['description_gama'], $gama['id_gama']));
+        return $respuesta->execute(array($gama['name_gama'], $gama['description_gama'], $elemento));
     }
 
     function deleteGama($gama)

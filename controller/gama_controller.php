@@ -89,22 +89,18 @@ class gama_controller
 
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
-            if (isset($_REQUEST['id_gama'], $_REQUEST['name_gama'], $_REQUEST['description_gama'])) {
-                $gama = [
-                    'id_gama' => $_REQUEST['id_gama'],
-                    'name_gama' => $_REQUEST['name_gama'],
-                    'description_gama' => $_REQUEST['description_gama']
-                ];
-                if (!empty($this->gama_model->searchGama($gama))) {
-                    if ($this->gama_model->putGama($gama)) {
+            if (isset($_REQUEST['name_gama'], $_REQUEST['description_gama'])) {
+                if (!empty($this->gama_model->searchGama($elemento))) {
+                    if ($this->gama_model->putGama($_REQUEST, $elemento)) {
                         $this->auxiliar_view->mensaje('Se modifico una gama correctamente', $gamas, 'gamas');
                     } else {
                         $this->auxiliar_view->mensaje('Ocurrio un error al modificar GAMA', $gamas, 'gamas');
                     }
+                } else {
+                    $this->auxiliar_view->mensaje('El elemento ' . $elemento . ' no existe', $gamas, 'gamas');
                 }
-            } else {
-                $this->auxiliar_view->mensaje('El elemento ' . $elemento . ' no existe', $gamas, 'gamas');
-            }
+            } else
+                $this->auxiliar_view->mensaje('Falta parametros para la edicion de la gama', $gamas, 'gamas');
         } else
             header('location: ' . LOGIN);
     }
@@ -145,21 +141,17 @@ class gama_controller
         if ($this->checkLoggedIn()) {
             $gamas = $this->gama_model->getAllGama();
             if (isset($_REQUEST['name'], $_REQUEST['description_gama'])) {
-                $gama = [
-                    'name' => $_REQUEST['name'],
-                    'description_gama' => $_REQUEST['description_gama']
-                ];
-                $existe = $this->gama_model->searchGamaByName($_REQUEST['name']);
-                if (!$existe) {
-                    if ($this->gama_model->postGama($gama)) {
+                if (empty($this->gama_model->searchGamaByName($_REQUEST['name']))) {
+                    if ($this->gama_model->postGama($_REQUEST)) {
                         $this->auxiliar_view->mensaje('Se Agrego una gama nueva correctamente', $gamas, 'gamas');
                     } else {
                         $this->auxiliar_view->mensaje('Ocurrio un error al crear una nueva gama GAMA', $gamas, 'gamas');
                     }
+                } else {
+                    $this->auxiliar_view->mensaje('La GAMA ya existe, NO se puede crear', $gamas, 'gamas');
                 }
-            } else {
-                $this->auxiliar_view->mensaje('La GAMA ya existe, NO se puede crear', $gamas, 'gamas');
-            }
+            } else
+                $this->auxiliar_view->mensaje('Faltan parametros para la creacion de la gama', $gamas, 'gamas');
         } else
             header('location: ' . LOGIN);
     }
