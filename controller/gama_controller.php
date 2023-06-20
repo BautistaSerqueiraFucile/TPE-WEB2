@@ -119,9 +119,9 @@ class gama_controller
     // Borrado de una gama
     public function UL_deleteGama($elemento)
     {
-        if ($this->gama_model->searchGama($elemento)) {
             $gamas = $this->gama_model->getAllGama();
             if ($this->checkLoggedIn()) {
+                if ($this->gama_model->searchGama($elemento)) {
                 if ($this->gama_model->deleteGama($elemento)) {
                     $this->auxiliar_view->mensaje('Se elimino correctamente', $gamas, 'gamas');
                 } else {
