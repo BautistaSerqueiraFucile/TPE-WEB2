@@ -137,20 +137,23 @@ class gama_controller
 
     // Creado de una gama
     public function UL_CreateGama( $query )
- {
+ {      $gama= $_query;
         if ( $this->checkLoggedIn() ) {
-            $gamas = $this->gama_model->getAllGama();
-            $existe = $this->gama_model->searchGamaByName( $query[ 'name' ] );
-            if ( !$existe ) {
-                if ( $this->gama_model->postGama( $query ) ) {
-                    $this->auxiliar_view->mensaje( 'Se Agrego una gama nueva correctamente', $gamas, 'gamas' );
-                } else {
-                    $this->auxiliar_view->mensaje( 'Ocurrio un error al crear una nueva gama GAMA', $gamas, 'gamas' );
-                }
+            $gamas = $this->gama_model->getAllGama();            
+            if ( !empty($this->gama_model->searchGamaByName( $query[ 'name' ] ))) {
+                if ( isset($gama['name'] && $gama['description_gama'])) {
+                    if ( $this->gama_model->postGama( $query ) ) {
+                        $this->auxiliar_view->mensaje( 'Se Agrego una gama nueva correctamente', $gamas, 'gamas' );
+                    } else {
+                        $this->auxiliar_view->mensaje( 'Ocurrio un error al crear una nueva gama GAMA', $gamas, 'gamas' );
+                    }    
+                }    
+                else {
+                    $this->auxiliar_view->mensaje( 'Sin detalle de los elementos para crear GAMA', $gamas, 'gamas' ); 
+                }            
             } else {
                 $this->auxiliar_view->mensaje( 'La GAMA ya existe, NO se puede crear', $gamas, 'gamas' );
             }
-
         } else
         header( 'location: ' . LOGIN );
     }
