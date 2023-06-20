@@ -118,24 +118,32 @@ class pc_controller
     // ABM --
 
     // Modificar pc
-    public function UL_modifiePc($id_pc, $elemento)
+    public function UL_modifiePc($id_pc)
     {
-        $pc = $elemento;
-        $gamas = $this->gama_model->getAllGama();
         if ($this->checkLoggedIn()) {
+            $gamas = $this->gama_model->getAllGama();
             if (!empty($this->pc_model->GetPcById($id_pc))) {
-                if (isset($pc['motherboard'], $pc['processor'], $pc['disco'], $pc['RAM'], $pc['video'], $pc['description_pc'], $pc['gama']) ) {
-                    if ($this->pc_model->putPc($id_pc, $elemento)) {
+                if (isset($_REQUEST['motherboard'], $_REQUEST['processor'], $_REQUEST['disco'], $_REQUEST['RAM'], $_REQUEST['video'], $_REQUEST['description_pc'], $_REQUEST['gama'])) {
+                    $pc = [
+                        'motherboard' => $_REQUEST['motherboard'],
+                        'processor' => $_REQUEST['processor'],
+                        'disco' => $_REQUEST['disco'],
+                        'RAM' => $_REQUEST['RAM'],
+                        'video' => $_REQUEST['video'],
+                        'description_pc' => $_REQUEST['description_pc'],
+                        'gama' => $_REQUEST['gama']
+                    ];
+                    if ($this->pc_model->putPc($id_pc, $pc)) {
                         $this->auxiliar_view->mensaje("Se modifico correctamente", $gamas, "home");
                     } else {
                         $this->auxiliar_view->mensaje("Ocurrio un error y no se pudo modificar la PC", $gamas, "home");
-                    }    
-                }else {
+                    }
+                } else {
                     $this->auxiliar_view->mensaje("Sin detalle de los elementos a modificar", $gamas, "home");
-                }               
+                }
 
             } else
-            $this->auxiliar_view->mensaje("El elemento " . $id_pc . " no existe", $gamas, "home");
+                $this->auxiliar_view->mensaje("El elemento " . $id_pc . " no existe", $gamas, "home");
 
         } else {
             header('location:' . LOGIN);
@@ -173,14 +181,27 @@ class pc_controller
     }
 
     // Agregar pc 
-    public function UL_CreatePc($query)
+    public function UL_CreatePc()
     {
-        $gamas = $this->gama_model->getAllGama();
+
         if ($this->checkLoggedIn()) {
-            if ($this->pc_model->postPc($query)) {
-                $this->auxiliar_view->mensaje("Se creo una pc correctamente", $gamas, "home");
-            }
-            $this->auxiliar_view->mensaje("Ocurrio un error en la creacion de PC", $gamas, "home");
+            $gamas = $this->gama_model->getAllGama();
+            if (isset($_REQUEST['motherboard'], $_REQUEST['processor'], $_REQUEST['disco'], $_REQUEST['RAM'], $_REQUEST['video'], $_REQUEST['description_pc'], $_REQUEST['gama'])) {
+                $pc = [
+                    'motherboard' => $_REQUEST['motherboard'],
+                    'processor' => $_REQUEST['processor'],
+                    'disco' => $_REQUEST['disco'],
+                    'RAM' => $_REQUEST['RAM'],
+                    'video' => $_REQUEST['video'],
+                    'description_pc' => $_REQUEST['description_pc'],
+                    'gama' => $_REQUEST['gama']
+                ];
+                if ($this->pc_model->postPc($pc)) {
+                    $this->auxiliar_view->mensaje("Se creo una pc correctamente", $gamas, "home");
+                } else
+                    $this->auxiliar_view->mensaje("Ocurrio un error en la creacion de PC", $gamas, "home");
+            } else
+                $this->auxiliar_view->mensaje("Faltan datos para la creacion", $gamas, "home");
         } else {
             header('location:' . LOGIN);
         }

@@ -42,12 +42,12 @@ switch ($parameters[0]) {
         break;
 
     case 'modificarPc':
-        $pc_control->UL_modifiePc($parameters[1], $_REQUEST);
+        $pc_control->UL_modifiePc($parameters[1]);
         break;
 
-        case 'confirmarEliminarPc':
-            $pc_control->UL_confirmDeletePc($parameters[1]);
-            break;
+    case 'confirmarEliminarPc':
+        $pc_control->UL_confirmDeletePc($parameters[1]);
+        break;
 
     case 'eliminarPc':
         $pc_control->UL_deletePc($parameters[1]);
@@ -58,7 +58,7 @@ switch ($parameters[0]) {
         break;
 
     case 'createPc':
-        $pc_control->UL_CreatePc($_REQUEST);
+        $pc_control->UL_CreatePc();
         break;
 
     //REFERENCIA DE GAMAS
@@ -72,13 +72,13 @@ switch ($parameters[0]) {
         break;
 
     case 'createGama':
-        $gama_control->UL_CreateGama($_REQUEST);
+        $gama_control->UL_CreateGama();
         break;
 
-        case 'confirmarEliminarGama':
-            $gama_control->UL_confirmDeleteGama($parameters[1]);
-            break;
-            
+    case 'confirmarEliminarGama':
+        $gama_control->UL_confirmDeleteGama($parameters[1]);
+        break;
+
     case 'eliminarGama':
         $gama_control->UL_deleteGama($parameters[1]);
         break;
@@ -86,9 +86,9 @@ switch ($parameters[0]) {
     case 'editarGama':
         $gama_control->UL_editGama($parameters[1]);
         break;
-    
+
     case 'modificarGama':
-        $gama_control->UL_modifyGama($parameters[1],$_REQUEST);
+        $gama_control->UL_modifyGama($parameters[1]);
         break;
 
 
