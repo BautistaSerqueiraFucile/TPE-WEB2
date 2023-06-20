@@ -49,9 +49,7 @@ class pc_controller
             } else {
                 $this->auxiliar_view->pc_gama_empty("Sin elementos", $gamas);
             }
-
         }
-
     }
 
     // mostrar en detalle la pc elegida
@@ -68,7 +66,6 @@ class pc_controller
         } else {
             $this->auxiliar_view->mensaje("No se encontro el elemento", $gamas, "home");
         }
-
     }
 
     // mostrar las pc por gama 
@@ -88,9 +85,7 @@ class pc_controller
             } else {
                 $this->auxiliar_view->pc_gama_empty("Sin elementos", $gamas);
             }
-
         }
-
     }
 
     // Mostrar interfaz de edicion de pc 
@@ -125,14 +120,19 @@ class pc_controller
     // Modificar pc
     public function UL_modifiePc($id_pc, $elemento)
     {
+        $pc = $elemento;
         $gamas = $this->gama_model->getAllGama();
         if ($this->checkLoggedIn()) {
             if (!empty($this->pc_model->GetPcById($id_pc))) {
-                if ($this->pc_model->putPc($id_pc, $elemento)) {
-                    $this->auxiliar_view->mensaje("Se modifico correctamente", $gamas, "home");
-                } else {
-                    $this->auxiliar_view->mensaje("Ocurrio un error y no se pudo modificar la PC", $gamas, "home");
-                }
+                if (isset($pc['motherboard'], $pc['processor'], $pc['disco'], $pc['RAM'], $pc['video'], $pc['description_pc'], $pc['gama']) ) {
+                    if ($this->pc_model->putPc($id_pc, $elemento)) {
+                        $this->auxiliar_view->mensaje("Se modifico correctamente", $gamas, "home");
+                    } else {
+                        $this->auxiliar_view->mensaje("Ocurrio un error y no se pudo modificar la PC", $gamas, "home");
+                    }    
+                }else {
+                    $this->auxiliar_view->mensaje("Sin detalle de los elementos a modificar", $gamas, "home");
+                }               
 
             } else
             $this->auxiliar_view->mensaje("El elemento " . $id_pc . " no existe", $gamas, "home");
